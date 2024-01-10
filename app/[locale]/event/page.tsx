@@ -1,10 +1,12 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import React, { useState, useEffect, useRef, useCallback, use } from "react";
 import Image from "next/image";
 import Snowfall from "react-snowfall";
 import Link from "next/link";
+import axios from "axios";
+import useSWR, { mutate } from "swr";
 
 function SearchBarFallback() {
   return <>placeholder</>;
@@ -13,10 +15,110 @@ function classNames(...classes: any[]) {
   return classes.filter(Boolean).join(" ");
 }
 
+let URL = process.env.NEXT_PUBLIC_URL;
+let logsURL = `${process.env.NEXT_PUBLIC_URL}/logs`;
+
+const fetcher = async (url: string) =>
+  await axios
+    .get(url, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN} `,
+      },
+    })
+    .then((res) => res.data)
+    .catch(function (err) {
+      console.log(err);
+    });
+
 export default function Event() {
+  const [mute, setMute] = useState(true);
+  const { data, error } = useSWR(URL, fetcher);
+  const [dataGroup, setDataGroup] = useState();
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const audioButton = useRef<HTMLButtonElement>(null);
+
+  function groupBy(objectArray: any, property: string) {
+    return objectArray.reduce(function (acc: any, obj: any) {
+      var key = obj[property];
+
+      if (!acc[key]) {
+        acc[key] = [];
+      }
+      acc[key].push(obj);
+      return acc;
+    }, {});
+  }
+
+  useEffect(() => {
+    if (data && data.status == "success") {
+      var groupedCategory = groupBy(data.data, "event_group");
+      setDataGroup(groupedCategory);
+    }
+  }, [data]);
+
+  async function logs(eventID: string, event_slug: string) {
+    if (event_slug != "#") {
+      try {
+        const obj = {
+          event_id: eventID,
+        };
+
+        const resulte = await axios.post(logsURL, obj, {
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+            Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN} `,
+          },
+        });
+
+        if (resulte.status == 200) {
+          setTimeout(() => {
+            window.open(event_slug, "_blank");
+          }, 100);
+          // window.open(event_slug, '_blank', 'noopener, noreferrer');
+          // const link = document.createElement("a");
+          // link.href = event_slug;
+          // link.target = "_blank";
+          // link.click();
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    }
+  }
+
+  useEffect(() => {
+    // console.log(mute);
+    // console.log(audioButton.current);
+    // if (audioButton.current) audioButton.current.click();
+    if (audioRef.current !== null && mute == false) {
+      audioRef.current.pause();
+      audioRef.current.play();
+      audioRef.current.muted = false;
+      audioRef.current.volume = 0.7;
+    } else if (audioRef.current !== null && mute == true) {
+      audioRef.current.muted = true;
+    }
+  }, [mute]);
+
   return (
     <>
       <div className="min-h-screen w-full  relative pb-40">
+        <figure className="absolute w-full h-full">
+          <audio
+            id="audio-player"
+            controls={true}
+            loop={true}
+            muted={true}
+            ref={audioRef}
+            className="hidden"
+          >
+            <source src="/assets/chirtmas.mp3" type="audio/mpeg"></source>
+          </audio>
+        </figure>
+
         <Snowfall
           // The color of the snowflake, can be any valid CSS color.
           // color="#434343"
@@ -39,7 +141,7 @@ export default function Event() {
         >
           <div className="max-w-7xl  flex justify-center items-center relative w-full h-24">
             <Link href="/" passHref>
-              <div className="relative flex justify-center items-center">
+              <div className="relative flex justify-center items-center h-24 w-[170px]">
                 <Image
                   priority={true}
                   src="/assets/logo_christmas.png"
@@ -48,7 +150,7 @@ export default function Event() {
                   width="0"
                   height="0"
                   style={{ objectFit: "contain", objectPosition: "center" }}
-                  className="h-24 w-fit"
+                  className="h-24 w-[170px]"
                 />
               </div>
             </Link>
@@ -57,7 +159,7 @@ export default function Event() {
 
         <section className="w-full px-4 md:px-10 xxl:px-0 flex justify-center  items-center py-4">
           <div className="max-w-7xl  relative flex-col flex items-center justify-center gap-1 ">
-            <p className="text-center">Welcome to Velaa langsuan Community.</p>
+            <p className="text-center">Welcome to Velaa Langsuan Community.</p>
             <p className="text-center">We open daily: 07:00 am. - 10:00 pm.</p>
 
             <div id="social" className="flex items-center gap-2 mt-2  ">
@@ -190,6 +292,46 @@ export default function Event() {
                 </a>
               </Link>
 
+              <Link href="https://velaalangsuan.com" legacyBehavior passHref>
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="website"
+                  className="text-black hover:text-white hover:scale-110 duration-300 "
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="40"
+                    height="40"
+                    viewBox="0 0 32.84 32.84"
+                  >
+                    <circle
+                      id="Ellipse_9"
+                      data-name="Ellipse 9"
+                      cx="15.67"
+                      cy="15.67"
+                      r="15.67"
+                      transform="translate(0.75 0.75)"
+                      fill="white"
+                      stroke="#000"
+                      strokeWidth="1.5"
+                    />
+
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="-9 -8 32 32"
+                      width="26"
+                      height="26"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M21.721 12.752a9.711 9.711 0 00-.945-5.003 12.754 12.754 0 01-4.339 2.708 18.991 18.991 0 01-.214 4.772 17.165 17.165 0 005.498-2.477zM14.634 15.55a17.324 17.324 0 00.332-4.647c-.952.227-1.945.347-2.966.347-1.021 0-2.014-.12-2.966-.347a17.515 17.515 0 00.332 4.647 17.385 17.385 0 005.268 0zM9.772 17.119a18.963 18.963 0 004.456 0A17.182 17.182 0 0112 21.724a17.18 17.18 0 01-2.228-4.605zM7.777 15.23a18.87 18.87 0 01-.214-4.774 12.753 12.753 0 01-4.34-2.708 9.711 9.711 0 00-.944 5.004 17.165 17.165 0 005.498 2.477zM21.356 14.752a9.765 9.765 0 01-7.478 6.817 18.64 18.64 0 001.988-4.718 18.627 18.627 0 005.49-2.098zM2.644 14.752c1.682.971 3.53 1.688 5.49 2.099a18.64 18.64 0 001.988 4.718 9.765 9.765 0 01-7.478-6.816zM13.878 2.43a9.755 9.755 0 016.116 3.986 11.267 11.267 0 01-3.746 2.504 18.63 18.63 0 00-2.37-6.49zM12 2.276a17.152 17.152 0 012.805 7.121c-.897.23-1.837.353-2.805.353-.968 0-1.908-.122-2.805-.353A17.151 17.151 0 0112 2.276zM10.122 2.43a18.629 18.629 0 00-2.37 6.49 11.266 11.266 0 01-3.746-2.504 9.754 9.754 0 016.116-3.985z"
+                      />
+                    </svg>
+                  </svg>
+                </a>
+              </Link>
+
               <Link href="https://lin.ee/lIUrz4f" legacyBehavior passHref>
                 <a
                   target="_blank"
@@ -223,79 +365,109 @@ export default function Event() {
                   </svg>
                 </a>
               </Link>
+
+              <button
+                type="button"
+                className=" text-center  cursor-pointer text-black w-9 h-9"
+                onClick={() => {
+                  setMute(!mute);
+                }}
+              >
+                {mute ? (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    className={`w-9 h-9 shrink-0`}
+                  >
+                    <path d="M13.5 4.06c0-1.336-1.616-2.005-2.56-1.06l-4.5 4.5H4.508c-1.141 0-2.318.664-2.66 1.905A9.76 9.76 0 001.5 12c0 .898.121 1.768.35 2.595.341 1.24 1.518 1.905 2.659 1.905h1.93l4.5 4.5c.945.945 2.561.276 2.561-1.06V4.06zM17.78 9.22a.75.75 0 10-1.06 1.06L18.44 12l-1.72 1.72a.75.75 0 001.06 1.06l1.72-1.72 1.72 1.72a.75.75 0 101.06-1.06L20.56 12l1.72-1.72a.75.75 0 00-1.06-1.06l-1.72 1.72-1.72-1.72z" />
+                  </svg>
+                ) : (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className={`w-9 h-9 shrink-0`}
+                  >
+                    <path d="M13.5 4.06c0-1.336-1.616-2.005-2.56-1.06l-4.5 4.5H4.508c-1.141 0-2.318.664-2.66 1.905A9.76 9.76 0 001.5 12c0 .898.121 1.768.35 2.595.341 1.24 1.518 1.905 2.659 1.905h1.93l4.5 4.5c.945.945 2.561.276 2.561-1.06V4.06zM18.584 5.106a.75.75 0 011.06 0c3.808 3.807 3.808 9.98 0 13.788a.75.75 0 11-1.06-1.06 8.25 8.25 0 000-11.668.75.75 0 010-1.06z" />
+                    <path d="M15.932 7.757a.75.75 0 011.061 0 6 6 0 010 8.486.75.75 0 01-1.06-1.061 4.5 4.5 0 000-6.364.75.75 0 010-1.06z" />
+                  </svg>
+                )}
+              </button>
             </div>
           </div>
         </section>
 
-        <section className="w-full flex justify-center my-7 h-[400px]">
-          <div className="max-w-7xl w-full h-full relative overflow-hidden bg-black"></div>
-        </section>
+        {dataGroup
+          ? Object.keys(dataGroup)
+              .filter((p) => p == "banner")
+              .map((item: any, index: number) => (
+                <section
+                  key={index}
+                  className="w-full flex justify-center my-7 h-fit"
+                >
+                  <div className="max-w-7xl w-full h-full relative overflow-hidden !z-[-10]">
+                    <Image
+                      priority
+                      //@ts-ignore
+                      src={dataGroup[item][0]?.event_bg}
+                      alt="banner"
+                      width="0"
+                      height="0"
+                      sizes="100vw"
+                      style={{ objectFit: "cover", objectPosition: "center" }}
+                      className="w-full h-full "
+                    />
+                  </div>
+                </section>
+              ))
+          : null}
 
-        <section className="w-full px-4 md:px-10 xxl:px-0 flex justify-center  items-center py-4">
-          <div className="max-w-7xl  relative flex-col flex items-center justify-center gap-1 w-full">
-            <p className="text-center uppercase text-2xl md:text-3xl font-semibold">
-              Enjoy The Rhythm
-            </p>
+        {dataGroup
+          ? Object.keys(dataGroup)
+              .filter((p) => p != "banner")
+              .map((item: any, index: number) => (
+                <section
+                  key={index}
+                  className="w-full px-4 md:px-10 xxl:px-0 flex justify-center  items-center py-4"
+                >
+                  <div className="max-w-7xl  relative flex-col flex items-center justify-center gap-1 w-full">
+                    <p className="text-center uppercase text-2xl md:text-3xl font-medium">
+                      {item}
+                    </p>
 
-            <div className="w-full grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-4 my-4">
-              <div className="w-full h-[200px] md:h-[300px] bg-black"></div>
-
-              <div className="w-full h-[200px] md:h-[300px] bg-black"></div>
-
-              <div className="w-full h-[200px] md:h-[300px] bg-black"></div>
-            </div>
-          </div>
-        </section>
-
-        <section className="w-full px-4 md:px-10 xxl:px-0 flex justify-center  items-center py-4">
-          <div className="max-w-7xl  relative flex-col flex items-center justify-center gap-1 w-full">
-            <p className="text-center uppercase text-2xl md:text-3xl font-semibold">
-              Workshops
-            </p>
-
-            <div className="w-full grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-4 my-4">
-              <div className="w-full h-[200px] md:h-[300px] bg-black"></div>
-
-              <div className="w-full h-[200px] md:h-[300px] bg-black"></div>
-              <div className="w-full h-[200px] md:h-[300px] bg-black"></div>
-
-              <div className="w-full h-[200px] md:h-[300px] bg-black"></div>
-            </div>
-          </div>
-        </section>
-
-        <section className="w-full px-4 md:px-10 xxl:px-0 flex justify-center  items-center py-4">
-          <div className="max-w-7xl  relative flex-col flex items-center justify-center gap-1 w-full">
-            <p className="text-center uppercase text-2xl md:text-3xl font-semibold">
-              Activities
-            </p>
-
-            <div className="w-full grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-4 my-4">
-              <div className="w-full h-[200px] md:h-[300px] bg-black"></div>
-
-              <div className="w-full h-[200px] md:h-[300px] bg-black"></div>
-
-              <div className="w-full h-[200px] md:h-[300px] bg-black"></div>
-            </div>
-          </div>
-        </section>
-
-        <section className="w-full px-4 md:px-10 xxl:px-0 flex justify-center  items-center py-4">
-          <div className="max-w-7xl  relative flex-col flex items-center justify-center gap-1 w-full">
-            <p className="text-center uppercase text-2xl md:text-3xl font-semibold">
-              Promotions
-            </p>
-
-            <div className="w-full grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-4 my-4">
-              <div className="w-full h-[200px] md:h-[300px] bg-black"></div>
-
-              <div className="w-full h-[200px] md:h-[300px] bg-black"></div>
-
-              <div className="w-full h-[200px] md:h-[300px] bg-black"></div>
-              <div className="w-full h-[200px] md:h-[300px] bg-black"></div>
-            </div>
-          </div>
-        </section>
+                    <div className="w-full flex flex-wrap justify-center gap-3 md:gap-4 my-4">
+                      {dataGroup[item]
+                        //@ts-ignore
+                        .map((cardItem: any, indexCard: number) => (
+                          <div
+                            onClick={() =>
+                              logs(cardItem.event_id, cardItem.event_slug)
+                            }
+                            key={indexCard}
+                            className="w-40 h-40 sm:w-60 sm:h-60 relative rounded-md overflow-hidden shadow-md cursor-pointer"
+                          >
+                            <Image
+                              priority
+                              //@ts-ignore
+                              src={cardItem.event_bg}
+                              alt="banner"
+                              width="0"
+                              height="0"
+                              sizes="100vw"
+                              style={{
+                                objectFit: "cover",
+                                objectPosition: "center",
+                              }}
+                              className="w-full h-full hover:scale-110 duration-300 transition-all"
+                            />
+                          </div>
+                        ))}
+                    </div>
+                  </div>
+                </section>
+              ))
+          : null}
       </div>
     </>
   );

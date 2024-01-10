@@ -93,7 +93,7 @@ interface Props {
 export default function RootLayout({ children, params }: Props) {
   return (
     <html lang={params.locale} className={`${prompt.variable} `}>
-      <EventPopup opened={false} />
+      <EventPopup />
       <CookieConsent />
       <AOSInit />
       <GoogleAnalytics />

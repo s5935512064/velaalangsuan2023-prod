@@ -175,7 +175,7 @@ export default function Home() {
           </div>
 
           <div className="absolute  left-0 lg:inline-flex items-center hidden ">
-            <ul className="flex gap-7 divide-x-2">
+            <div className="flex gap-7 divide-x-2">
               <Link
                 activeClass="active"
                 to="vender"
@@ -184,9 +184,9 @@ export default function Home() {
                 duration={500}
                 href="#"
               >
-                <li className="text-black/80 hover:text-black   font-medium uppercase cursor-pointer duration-200 transition-all">
+                <p className="text-black/80 hover:text-black   font-medium uppercase cursor-pointer duration-200 transition-all">
                   Our Vender
-                </li>
+                </p>
               </Link>
 
               <Link
@@ -197,11 +197,11 @@ export default function Home() {
                 duration={500}
                 href="#"
               >
-                <li className="text-black/80 hover:text-black  font-medium uppercase cursor-pointer duration-200 transition-all pl-7">
+                <p className="text-black/80 hover:text-black  font-medium uppercase cursor-pointer duration-200 transition-all pl-7">
                   Promotion & Event
-                </li>
+                </p>
               </Link>
-            </ul>
+            </div>
           </div>
 
           <div className="relative flex justify-center items-center ">
@@ -222,18 +222,9 @@ export default function Home() {
               id="social"
               className="hidden lg:flex items-center gap-2 mr-3 "
             >
-              <Link
-                activeClass="active"
-                to="contact"
-                smooth={true}
-                offset={-120}
-                duration={500}
-                href="#"
-              >
-                <button className="text-black/80 hover:text-black  font-medium uppercase cursor-pointer duration-200 transition-all">
-                  Contact Us
-                </button>
-              </Link>
+              <p className="text-black/80 hover:text-black  font-medium uppercase cursor-pointer duration-200 transition-all">
+                Contact Us
+              </p>
 
               <Link2
                 href="https://www.instagram.com/velaalangsuan/"
@@ -323,7 +314,7 @@ export default function Home() {
         </div>
 
         <div className="flex justify-center mt-2 w-full lg:hidden">
-          <ul className="flex gap-2 justify-center w-full  divide-x-2">
+          <div className="flex gap-2 justify-center w-full  divide-x-2">
             <Link
               activeClass="active"
               to="vender"
@@ -332,9 +323,9 @@ export default function Home() {
               duration={500}
               href="#"
             >
-              <li className="text-black/80 hover:text-black text-xs sm:text-sm inline-flex font-medium uppercase cursor-pointer duration-200 transition-all  whitespace-nowrap">
+              <p className="text-black/80 hover:text-black text-xs sm:text-sm inline-flex font-medium uppercase cursor-pointer duration-200 transition-all  whitespace-nowrap">
                 Our Vender
-              </li>
+              </p>
             </Link>
 
             <Link
@@ -345,9 +336,9 @@ export default function Home() {
               duration={500}
               href="#"
             >
-              <li className="text-black/80 hover:text-black text-xs sm:text-sm inline-flex font-medium uppercase cursor-pointer duration-200 transition-all  whitespace-nowrap pl-2">
+              <p className="text-black/80 hover:text-black text-xs sm:text-sm inline-flex font-medium uppercase cursor-pointer duration-200 transition-all  whitespace-nowrap pl-2">
                 Promotion & Event
-              </li>
+              </p>
             </Link>
 
             <Link
@@ -358,11 +349,11 @@ export default function Home() {
               duration={500}
               href="#"
             >
-              <li className="text-black/80 hover:text-black text-xs sm:text-sm inline-flex font-medium uppercase cursor-pointer duration-200 transition-all whitespace-nowrap pl-2">
+              <p className="text-black/80 hover:text-black text-xs sm:text-sm inline-flex font-medium uppercase cursor-pointer duration-200 transition-all whitespace-nowrap pl-2">
                 Contact Us
-              </li>
+              </p>
             </Link>
-          </ul>
+          </div>
         </div>
       </section>
 

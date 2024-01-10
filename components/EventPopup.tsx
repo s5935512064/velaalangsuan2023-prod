@@ -5,11 +5,9 @@ import React, { FC, useEffect, useState, useRef, Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import Image from "next/image";
 
-interface Props {
-  opened: boolean;
-}
+interface Props {}
 
-const EventPopup: FC<Props> = ({ opened }): JSX.Element => {
+const EventPopup: FC<Props> = (): JSX.Element => {
   let [isOpen, setIsOpen] = useState(false);
 
   function closeModal() {
@@ -47,7 +45,7 @@ const EventPopup: FC<Props> = ({ opened }): JSX.Element => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="transform p-4 text-left align-middle transition-all max-w-4xl  lg:max-w-5xl xl:max-w-5xl w-full bg-[url('/assets/king2565/01_background.webp')] lg:bg-[url('/assets/king2565/01_background.webp')] bg-no-repeat bg-cover bg-top h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-[75vh] relative flex justify-center items-center py-10">
+                <Dialog.Panel className="transform p-4 text-left align-middle transition-all max-w-4xl  lg:max-w-5xl xl:max-w-5xl w-full bg-[url('/assets/king2565/01_background.webp')] lg:bg-[url('/assets/king2565/01_background.webp')] bg-no-repeat bg-cover bg-top h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-[70vh] relative flex justify-center items-center py-10 rounded-lg">
                   {/* <div className="absolute bottom-0 h-1/2 bg-gradient-to-t from-white z-0 w-full left-0" /> */}
 
                   <div className="absolute -top-7 -right-1 ">
@@ -70,15 +68,15 @@ const EventPopup: FC<Props> = ({ opened }): JSX.Element => {
                     </button>
                   </div>
 
-                  <div className="w-full h-full relative max-w-xl lg:max-w-7xl">
+                  <div className="w-full h-full relative max-w-xl lg:max-w-7xl -mt-10 md:mt-0">
                     {/* <span className="sr-only border-img">class-border</span> */}
 
                     {/* <div className="w-20 h-20 sm:w-28 sm:h-28 bg-[url('/assets/king2565/03_sign.svg')] bg-contain bg-no-repeat bg-right sm:bg-center absolute -top-4 right-0 md:hidden " /> */}
 
-                    <div className="w-full h-full relative grid grid-cols-1 grid-rows-3 lg:grid-cols-2 lg:grid-rows-1 gap-2 my-2 lg:mt-0">
-                      <div className="bg-[url('/assets/king2565/02_picture.webp')] bg-no-repeat bg-contain bg-center  lg:bg-center flex items-center justify-center h-full relative row-span-2 opacity-100 scale-[.80]  -translate-y-2 " />
+                    <div className="w-full h-full relative grid grid-cols-1 grid-rows-2 lg:grid-cols-2 lg:grid-rows-1 gap-2 my-2 lg:mt-0">
+                      <div className="bg-[url('/assets/king2565/02_picture.webp')] bg-no-repeat bg-contain bg-center  lg:bg-center flex items-center justify-center h-full relative  opacity-100 scale-[.80]  -translate-y-2 " />
 
-                      <div className="h-full w-full relative justify-center grid grid-cols-1 justify-items-center lg:grid-rows-2 items-end gap-3 lg:-translate-x-10  mt-4">
+                      <div className="h-full w-full relative justify-center items-center justify-items-center  gap-3 lg:-translate-x-10 ">
                         {/* <div className="w-full max-h-[250px] h-full relative bg-[url('/assets/king2565/03_sign.svg')] bg-no-repeat bg-center bg-contain hidden md:block "></div> */}
 
                         <div className="w-full h-full relative justify-center items-center  hidden lg:flex row-span-2  ">
@@ -94,11 +92,11 @@ const EventPopup: FC<Props> = ({ opened }): JSX.Element => {
                               objectFit: "contain",
                               objectPosition: "center",
                             }}
-                            className="w-full h-full scale-95"
+                            className="w-full h-full scale-[.80]"
                           />
                         </div>
 
-                        <div className="w-full h-full  relative  -translate-y-5 lg:hidden ">
+                        <div className="w-full h-full  relative -translate-y-4  lg:hidden ">
                           <Image
                             unoptimized
                             priority={true}
@@ -109,9 +107,9 @@ const EventPopup: FC<Props> = ({ opened }): JSX.Element => {
                             height="0"
                             style={{
                               objectFit: "contain",
-                              objectPosition: "center",
+                              objectPosition: "top",
                             }}
-                            className="w-full h-full"
+                            className="w-full h-full "
                           />
                         </div>
                       </div>
