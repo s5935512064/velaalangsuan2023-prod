@@ -3,6 +3,8 @@ import type { NextRequest } from "next/server";
 import { i18n } from "./i18n-config";
 import { match as matchLocale } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
+import rateLimit from "@utils/rate-limit";
+import { headers } from "next/headers";
 
 function getLocale(request: NextRequest): string | undefined {
   // Negotiator expects plain object so we need to transform headers
@@ -22,21 +24,24 @@ function getLocale(request: NextRequest): string | undefined {
   return locale;
 }
 
+const limiter = rateLimit({
+  limit: 30,
+});
+
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
+  const csrfToken = headers().get("X-CSRF-Token") || "missing";
+  const { isRateLimited, currentUsage, limit } = limiter.check(csrfToken);
 
-  // // `/_next/` and `/api/` are ignored by the watcher, but we need to ignore files in `public` manually.
-  // // If you have one
-  // if (
-  //   [
-  //     '/manifest.json',
-  //     '/favicon.ico',
-  //     // Your other files in `public`
-  //   ].includes(pathname)
-  // )
-  //   return
+  // console.log(`Rate limit: ${currentUsage}/${limit}`);
 
-  // Check if there is any supported locale in the pathname
+  if (isRateLimited) {
+    return new Response("Rate limit reached", {
+      status: 418,
+      statusText: "Too Many Requests",
+    });
+  }
+
   const pathnameIsMissingLocale = i18n.locales.every(
     (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
   );
@@ -56,7 +61,7 @@ export function middleware(request: NextRequest) {
   }
 }
 
-export { default } from "next-auth/middleware";
+// export { default } from "next-auth/middleware";
 
 export const config = {
   // Skip all paths that should not be internationalized

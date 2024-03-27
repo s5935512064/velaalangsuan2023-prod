@@ -1,12 +1,16 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import React, { useState, useEffect, useRef, useCallback, use } from "react";
 import Image from "next/image";
 import Snowfall from "react-snowfall";
 import Link from "next/link";
 import axios from "axios";
 import useSWR, { mutate } from "swr";
+import dynamic from "next/dynamic";
+
+const Fancybox = dynamic(() => import("@/components/FancyboxWrap"), {
+  ssr: false,
+});
 
 function SearchBarFallback() {
   return <>placeholder</>;
@@ -38,6 +42,17 @@ export default function Event() {
   const [dataGroup, setDataGroup] = useState();
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const audioButton = useRef<HTMLButtonElement>(null);
+  const [images, setImages] = useState([]);
+
+  // if (typeof window !== "undefined") {
+
+  //   const snowflake1 = document.createElement("img");
+  //   snowflake1.src = "/assets/leaf.webp";
+  //   const snowflake2 = document.createElement("img");
+  //   snowflake2.src = "/assets/leaf-2.png";
+
+  //   const images = [snowflake1, snowflake2];
+  // }
 
   function groupBy(objectArray: any, property: string) {
     return objectArray.reduce(function (acc: any, obj: any) {
@@ -103,10 +118,23 @@ export default function Event() {
     }
   }, [mute]);
 
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const snowflake1 = document.createElement("img");
+      snowflake1.src = "/assets/leaf.webp";
+      const snowflake2 = document.createElement("img");
+      snowflake2.src = "/assets/leaf-2.png";
+
+      const image = [snowflake1, snowflake2];
+      //@ts-ignore
+      setImages(image);
+    }
+  }, []);
+
   return (
     <>
       <div className="min-h-screen w-full  relative pb-40">
-        <figure className="absolute w-full h-full">
+        {/* <figure className="absolute w-full h-full">
           <audio
             id="audio-player"
             controls={true}
@@ -117,7 +145,7 @@ export default function Event() {
           >
             <source src="/assets/chirtmas.mp3" type="audio/mpeg"></source>
           </audio>
-        </figure>
+        </figure> */}
 
         <Snowfall
           // The color of the snowflake, can be any valid CSS color.
@@ -130,7 +158,9 @@ export default function Event() {
             height: "100vh",
           }}
           // Controls the number of snowflakes that are created (defaults to 150).
-          snowflakeCount={200}
+          snowflakeCount={10}
+          radius={[5, 15]}
+          images={images}
         />
 
         <section
@@ -144,7 +174,7 @@ export default function Event() {
               <div className="relative flex justify-center items-center h-24 w-[170px]">
                 <Image
                   priority={true}
-                  src="/assets/logo_christmas.png"
+                  src="/assets/LOGO-GREEN.webp"
                   alt="logo"
                   sizes="100vw"
                   width="0"
@@ -366,7 +396,7 @@ export default function Event() {
                 </a>
               </Link>
 
-              <button
+              {/* <button
                 type="button"
                 className=" text-center  cursor-pointer text-black w-9 h-9"
                 onClick={() => {
@@ -393,7 +423,7 @@ export default function Event() {
                     <path d="M15.932 7.757a.75.75 0 011.061 0 6 6 0 010 8.486.75.75 0 01-1.06-1.061 4.5 4.5 0 000-6.364.75.75 0 010-1.06z" />
                   </svg>
                 )}
-              </button>
+              </button> */}
             </div>
           </div>
         </section>
@@ -423,51 +453,66 @@ export default function Event() {
               ))
           : null}
 
-        {dataGroup
-          ? Object.keys(dataGroup)
-              .filter((p) => p != "banner")
-              .map((item: any, index: number) => (
-                <section
-                  key={index}
-                  className="w-full px-4 md:px-10 xxl:px-0 flex justify-center  items-center py-4"
-                >
-                  <div className="max-w-7xl  relative flex-col flex items-center justify-center gap-1 w-full">
-                    <p className="text-center uppercase text-2xl md:text-3xl font-medium">
-                      {item}
-                    </p>
+        <Fancybox
+          options={{
+            Carousel: {
+              infinite: false,
+            },
+          }}
+        >
+          {dataGroup
+            ? Object.keys(dataGroup)
+                .filter((p) => p != "banner")
+                .map((item: any, index: number) => (
+                  <section
+                    key={index}
+                    className="w-full px-4 md:px-10 xxl:px-0 flex justify-center  items-center py-4"
+                  >
+                    <div className="max-w-7xl  relative flex-col flex items-center justify-center gap-1 w-full">
+                      <p className="text-center uppercase text-2xl md:text-3xl font-medium">
+                        {item}
+                      </p>
 
-                    <div className="w-full flex flex-wrap justify-center gap-3 md:gap-4 my-4">
-                      {dataGroup[item]
-                        //@ts-ignore
-                        .map((cardItem: any, indexCard: number) => (
-                          <div
-                            onClick={() =>
-                              logs(cardItem.event_id, cardItem.event_slug)
-                            }
-                            key={indexCard}
-                            className="w-40 h-40 sm:w-60 sm:h-60 relative rounded-md overflow-hidden shadow-md cursor-pointer"
-                          >
-                            <Image
-                              priority
-                              //@ts-ignore
-                              src={cardItem.event_bg}
-                              alt="banner"
-                              width="0"
-                              height="0"
-                              sizes="100vw"
-                              style={{
-                                objectFit: "cover",
-                                objectPosition: "center",
-                              }}
-                              className="w-full h-full hover:scale-110 duration-300 transition-all"
-                            />
-                          </div>
-                        ))}
+                      <div className="w-full flex flex-wrap justify-center gap-3 md:gap-4 my-4">
+                        {dataGroup[item]
+                          //@ts-ignore
+                          .map((cardItem: any, indexCard: number) => (
+                            <div
+                              onClick={() =>
+                                logs(cardItem.event_id, cardItem.event_slug)
+                              }
+                              key={indexCard}
+                              className="w-40 h-40 sm:w-60 sm:h-60 relative rounded-md overflow-hidden shadow-md cursor-pointer"
+                            >
+                              <a
+                                aria-label="banner"
+                                data-fancybox="banner"
+                                href={cardItem.event_bg}
+                                className="w-full h-full relative"
+                              >
+                                <Image
+                                  priority
+                                  //@ts-ignore
+                                  src={cardItem.event_bg}
+                                  alt="banner"
+                                  width="0"
+                                  height="0"
+                                  sizes="100vw"
+                                  style={{
+                                    objectFit: "cover",
+                                    objectPosition: "center",
+                                  }}
+                                  className="w-full h-full hover:scale-110 duration-300 transition-all"
+                                />
+                              </a>
+                            </div>
+                          ))}
+                      </div>
                     </div>
-                  </div>
-                </section>
-              ))
-          : null}
+                  </section>
+                ))
+            : null}
+        </Fancybox>
       </div>
     </>
   );
