@@ -44,16 +44,6 @@ export default function Event() {
   const audioButton = useRef<HTMLButtonElement>(null);
   const [images, setImages] = useState([]);
 
-  // if (typeof window !== "undefined") {
-
-  //   const snowflake1 = document.createElement("img");
-  //   snowflake1.src = "/assets/leaf.webp";
-  //   const snowflake2 = document.createElement("img");
-  //   snowflake2.src = "/assets/leaf-2.png";
-
-  //   const images = [snowflake1, snowflake2];
-  // }
-
   function groupBy(objectArray: any, property: string) {
     return objectArray.reduce(function (acc: any, obj: any) {
       var key = obj[property];
@@ -105,9 +95,6 @@ export default function Event() {
   }
 
   useEffect(() => {
-    // console.log(mute);
-    // console.log(audioButton.current);
-    // if (audioButton.current) audioButton.current.click();
     if (audioRef.current !== null && mute == false) {
       audioRef.current.pause();
       audioRef.current.play();
@@ -484,27 +471,27 @@ export default function Event() {
                               key={indexCard}
                               className="w-40 h-40 sm:w-60 sm:h-60 relative rounded-md overflow-hidden shadow-md cursor-pointer"
                             >
-                              <a
+                              {/* <a
                                 aria-label="banner"
                                 data-fancybox="banner"
                                 href={cardItem.event_bg}
                                 className="w-full h-full relative"
                               >
-                                <Image
-                                  priority
-                                  //@ts-ignore
-                                  src={cardItem.event_bg}
-                                  alt="banner"
-                                  width="0"
-                                  height="0"
-                                  sizes="100vw"
-                                  style={{
-                                    objectFit: "cover",
-                                    objectPosition: "center",
-                                  }}
-                                  className="w-full h-full hover:scale-110 duration-300 transition-all"
-                                />
-                              </a>
+                              </a> */}
+                              <Image
+                                priority
+                                //@ts-ignore
+                                src={cardItem.event_bg}
+                                alt="banner"
+                                width="0"
+                                height="0"
+                                sizes="100vw"
+                                style={{
+                                  objectFit: "cover",
+                                  objectPosition: "center",
+                                }}
+                                className="w-full h-full hover:scale-110 duration-300 transition-all"
+                              />
                             </div>
                           ))}
                       </div>
