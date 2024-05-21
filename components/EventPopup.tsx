@@ -8,7 +8,7 @@ import Image from "next/image";
 interface Props {}
 
 const EventPopup: FC<Props> = (): JSX.Element => {
-  let [isOpen, setIsOpen] = useState(true);
+  let [isOpen, setIsOpen] = useState(false);
 
   function closeModal() {
     setIsOpen(false);
