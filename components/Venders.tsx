@@ -7,6 +7,131 @@ import ShopCard from "./ShopCard";
 
 const venders_list = [
   {
+    id: 47,
+    name: "Umi",
+    shopImg: "/assets/shop-gallery/Oyatsu/logo_Oyatsu.webp",
+    keyword:
+      "oyatsuoyatsunojikanstrawberrykakigorichiboustburnfreshstrawberriesdesserttokyothailandขนมหวานคาเฟ่ของหวาน",
+    about:
+      "Oyatsu no Jikan by Azuki to Kouri First store outside Japan of the world famous Kakigori Specialty by Chef Hiroyasu Kawate of Florilege restaurant in Tokyo (2 Michelin stars and No.2 Asia's 50 Best Restaurants 2024)",
+    aboutTH:
+      "สาขาแรกนอกญี่ปุ่น!!! Azuki to Kouri ร้าน Kakigori ขึ้นชื่อจากกรุงโตเกียว ที่ต้องจองคิวล่วงหน้าหลายเดือน โดยเชฟ Hiroyasu Kawate ระดับ 2 ดาวมิชลิน จาก “Florilege” และอันดับที่ 2 ร้านอาหารยอดเยี่ยมในเอเชีย จาก Asia's 50 Best Restaurant 2024 ภายใต้ชื่อร้าน Oyatsu no Jikan ที่รวมเมนูของหวาน สุด Exclusive อย่าง Kakigori ขึ้นชื่อทุกรสชาติ พลาดไม่ได้กับ French Toast สูตร Signature ของเชฟ และเมนูพิเศษเฉพาะที่ไทยเท่านั้น",
+    datetime: "11:00 AM - 22:00 PM \n Last Booking at 20:00 PM",
+    datetime2: "",
+    tel: "099 654 8755",
+    facebook:
+      "https://www.facebook.com/profile.php?id=61558113950446&locale=th_TH",
+    ig: "https://www.instagram.com/oyatsubk",
+    line: "#",
+    deliver: "#",
+    grabfood: "#",
+    lineman: "#",
+    robinhood: "#",
+    gallery: [
+      { src: "/assets/shop-gallery/Oyatsu/oyatsu_01.webp" },
+      { src: "/assets/shop-gallery/Oyatsu/oyatsu_02.webp" },
+      { src: "/assets/shop-gallery/Oyatsu/oyatsu_03.webp" },
+      { src: "/assets/shop-gallery/Oyatsu/oyatsu_04.webp" },
+      { src: "/assets/shop-gallery/Oyatsu/oyatsu_05.webp" },
+      { src: "/assets/shop-gallery/Oyatsu/oyatsu_06.webp" },
+    ],
+    new: true,
+  },
+  {
+    id: 48,
+    name: "Kad Kokoa",
+    shopImg: "/assets/shop-gallery/kadkokoa/kadkokoa_logo.webp",
+    keyword: "KadKokoaช๊อคโกแลตคาเฟ่ของหวานกาดโกเกา",
+    about:
+      "We are Thai Craft Chocolate Makers. Our chocolate highlights the natural and true taste of Thai cacao beans with as little intervention as possible through our 'Single Origin' style.",
+    aboutTH:
+      "เราเป็นผู้ผลิตช็อคโกแลตช่างไทย ช็อคโกแลตของเราเน้นทำให้รสชาติธรรมชาติและแท้ของเมล็ดกาแฟโกโก้ไทยเป็นหลัก โดยใช้วิธีการ 'Single Origin' โดยมีการแทรกแซงให้น้อยที่สุดเท่าที่จะเป็นไปได้",
+    datetime: "10:00 AM - 20:00 PM",
+    datetime2: "",
+    tel: "061 396 3805",
+    facebook: "https://www.facebook.com/kadkokoathailand",
+    ig: "https://www.instagram.com/kadkokoa_chocolate/",
+    line: "https://line.me/R/ti/p/@376qagtw?oat_content=url",
+    deliver: "#",
+    grabfood: "#",
+    lineman: "#",
+    robinhood: "#",
+    gallery: [
+      { src: "/assets/shop-gallery/kadkokoa/kadkokoa_06.webp" },
+      { src: "/assets/shop-gallery/kadkokoa/kadkokoa_01.webp" },
+      { src: "/assets/shop-gallery/kadkokoa/kadkokoa_02.webp" },
+      { src: "/assets/shop-gallery/kadkokoa/kadkokoa_03.webp" },
+      { src: "/assets/shop-gallery/kadkokoa/kadkokoa_05.webp" },
+      { src: "/assets/shop-gallery/kadkokoa/kadkokoa_04.webp" },
+      { src: "/assets/shop-gallery/kadkokoa/kadkokoa_07.webp" },
+    ],
+    new: true,
+  },
+
+  {
+    id: 45,
+    name: "Umi",
+    shopImg: "/assets/shop-gallery/umi/logo_umi.webp",
+    keyword:
+      "UmiVelaaUmiBkkSushiOmakaseOmakaseBangkokซูชิแซลม่อนโอมากาเสะอาหารญี่ปุ่นอิซากายะ",
+    about:
+      "our new Velaa branch offers a meticulously curated Sushi Omakase experience that's reminiscent of Japan's most acclaimed dining spaces. This accessible location redefines convenience, surrounded by landmarks of business, arts, and culture. As the city buzzes with energy outside, our guests are transported to a serene & tranquil haven within our walls.",
+    aboutTH:
+      "ที่สาขาใหม่ของเรา Velaa เรามอบประสบการณ์ Sushi Omakase ที่คัดสรรมาอย่างพิถีพิถันซึ่งเป็นที่นึกถึงในพื้นที่อาหารที่ได้รับการยกย่องมากที่สุดของญี่ปุ่น ที่ตั้งที่เข้าถึงได้นี้ได้ปรับปรุงความสะดวกสบายให้ดีขึ้น โดยมีสถานที่สำคัญทางธุรกิจ ศิลปะ และวัฒนธรรมล้อมรอบ ขณะที่เมืองกำลังเต็มไปด้วยพลังงานภายนอก แขกของเราจะได้รับการนำไปสู่ที่พักสงบและเงียบสงบภายในกำแพงของเรา",
+    datetime: "12:00 AM / 17:00 PM / 19:00 PM",
+    datetime2: "",
+    tel: "061 961 4949",
+    facebook: "https://www.facebook.com/umi49/",
+    ig: "https://www.instagram.com/umi_bkk/?hl=en",
+    line: "https://page.line.me/elc1267w?openQrModal=true",
+    deliver: "#",
+    grabfood: "#",
+    lineman: "#",
+    robinhood: "#",
+    gallery: [
+      { src: "/assets/shop-gallery/umi/umi_01.webp" },
+      { src: "/assets/shop-gallery/umi/umi_03.webp" },
+      { src: "/assets/shop-gallery/umi/umi_04.webp" },
+      { src: "/assets/shop-gallery/umi/umi_05.webp" },
+      { src: "/assets/shop-gallery/umi/umi_02.webp" },
+      { src: "/assets/shop-gallery/umi/umi_06.webp" },
+      { src: "/assets/shop-gallery/umi/umi_07.webp" },
+    ],
+    new: true,
+  },
+
+  {
+    id: 44,
+    name: "Café Kitsuné",
+    shopImg: "/assets/shop-gallery/kitsune/logo_kisune.webp",
+    keyword:
+      "CafeKitsuneCafeKitsuneVelaaคาเฟ่เค้กอาหารเครื่องดื่มเวลาหลังสวนคิสุเนะ",
+    about:
+      "Famous cafe with the Iconic fox @cafekitsune . Located in Velaa Sindhorn Village. Modern minimalist design with a French - Japanese feel.",
+    aboutTH:
+      "Café Kitsuné ร้านคาเฟ่ชื่อดังได้เปิดสาขาใหม่เพื่อเอาใจสายชิลที่อยากจะนั่งทั้งกลางวันและกลางคืนที่ Velaa Langsuan นอกจากจะเปิดที่ใหม่แล้วเขายังออกเมนูใหม่มากมายทั้ง อาหารแนวบรันช์ และยังมีไวน์พร้อมโคลด์คัตอีกด้วย",
+    datetime: "10:00 AM - 22:00 PM",
+    datetime2: "",
+    tel: "02 000 0673",
+    facebook: "https://www.facebook.com/profile.php?id=100089582513330",
+    ig: "https://www.instagram.com/cafekitsune",
+    line: "#",
+    deliver: "#",
+    grabfood: "#",
+    lineman: "#",
+    robinhood: "#",
+    gallery: [
+      { src: "/assets/shop-gallery/kitsune/kitsune_01.webp" },
+      { src: "/assets/shop-gallery/kitsune/kitsune_02.webp" },
+      { src: "/assets/shop-gallery/kitsune/kitsune_03.webp" },
+      { src: "/assets/shop-gallery/kitsune/kitsune_04.webp" },
+      { src: "/assets/shop-gallery/kitsune/kitsune_05.webp" },
+      { src: "/assets/shop-gallery/kitsune/kitsune_06.webp" },
+    ],
+    new: true,
+  },
+
+  {
     id: 4,
     name: "Co limited",
     shopImg: "/assets/shoplogo/11.webp",
@@ -39,6 +164,7 @@ const venders_list = [
       { src: "/assets/shop-gallery/Co limited/10_result.webp" },
       { src: "/assets/shop-gallery/Co limited/11_result.webp" },
     ],
+    new: false,
   },
 
   {
@@ -75,6 +201,7 @@ const venders_list = [
       { src: "/assets/shop-gallery/El gaucho/11_result.webp" },
       { src: "/assets/shop-gallery/El gaucho/12_result.webp" },
     ],
+    new: false,
   },
 
   {
@@ -110,43 +237,44 @@ const venders_list = [
       { src: "/assets/shop-gallery/Hoppe Coffeehouse/10_result.webp" },
       { src: "/assets/shop-gallery/Hoppe Coffeehouse/11_result.webp" },
     ],
+    new: false,
   },
 
-  {
-    id: 19,
-    name: "Kamui Hokkaido Eat & To Go",
-    shopImg: "/assets/shoplogo/03.webp",
-    keyword:
-      "KamuiHokkaidojapanesefoodrestaurantTonaktsucurryRiceButadonkatsujapanesecurryทงคัตสึแกงกะหรี่เทปปันอาหารญี่ปุ่นข้าวแกงกะหรี่ญี่ปุ่นหมูทอด",
-    about:
-      "With a crispy layer of breadcrumbs around a juicy pork cutlet, tonkatsu has become one of the most common Japanese food favourites. Here are the places where you can find tonkatsu even curry rice.",
-    aboutTH:
-      "ร้านอาหารญี่ปุ่น ที่ทำอาหารสดใหม่ให้เห็นที่เคาน์เตอร์ เสิร์ฟพร้อมกับซุปมิโซะ และสลัดผักเป็นเซ็ต ราคาย่อมเยา คิดค้นสูตรอาหารโดยเชฟกระทะเหล็ก Yamamoto Masamitsu",
-    datetime: "11:00 AM - 21:00 PM \n Last order 20:30 PM",
-    datetime2: "",
-    tel: "02 041 4044",
-    facebook:
-      "https://www.facebook.com/Kamui-Hokkaido-Eat-To-Go-101376358395502/",
-    ig: "https://www.instagram.com/kamui_velaa_sindhorn/",
-    line: "#",
-    deliver: "#",
-    grabfood: "https://bit.ly/39eB7e5",
-    lineman: "https://lin.ee/sg95db9",
-    robinhood: "#",
-    gallery: [
-      { src: "/assets/shop-gallery/Kamui/01_result.webp" },
-      { src: "/assets/shop-gallery/Kamui/02_result.webp" },
-      { src: "/assets/shop-gallery/Kamui/03_result.webp" },
-      { src: "/assets/shop-gallery/Kamui/04_result.webp" },
-      { src: "/assets/shop-gallery/Kamui/05_result.webp" },
-      { src: "/assets/shop-gallery/Kamui/06_result.webp" },
-      { src: "/assets/shop-gallery/Kamui/07_result.webp" },
-      { src: "/assets/shop-gallery/Kamui/08_result.webp" },
-      { src: "/assets/shop-gallery/Kamui/09_result.webp" },
-      { src: "/assets/shop-gallery/Kamui/10_result.webp" },
-      { src: "/assets/shop-gallery/Kamui/11_result.webp" },
-    ],
-  },
+  // {
+  //   id: 19,
+  //   name: "Kamui Hokkaido Eat & To Go",
+  //   shopImg: "/assets/shoplogo/03.webp",
+  //   keyword:
+  //     "KamuiHokkaidojapanesefoodrestaurantTonaktsucurryRiceButadonkatsujapanesecurryทงคัตสึแกงกะหรี่เทปปันอาหารญี่ปุ่นข้าวแกงกะหรี่ญี่ปุ่นหมูทอด",
+  //   about:
+  //     "With a crispy layer of breadcrumbs around a juicy pork cutlet, tonkatsu has become one of the most common Japanese food favourites. Here are the places where you can find tonkatsu even curry rice.",
+  //   aboutTH:
+  //     "ร้านอาหารญี่ปุ่น ที่ทำอาหารสดใหม่ให้เห็นที่เคาน์เตอร์ เสิร์ฟพร้อมกับซุปมิโซะ และสลัดผักเป็นเซ็ต ราคาย่อมเยา คิดค้นสูตรอาหารโดยเชฟกระทะเหล็ก Yamamoto Masamitsu",
+  //   datetime: "11:00 AM - 21:00 PM \n Last order 20:30 PM",
+  //   datetime2: "",
+  //   tel: "02 041 4044",
+  //   facebook:
+  //     "https://www.facebook.com/Kamui-Hokkaido-Eat-To-Go-101376358395502/",
+  //   ig: "https://www.instagram.com/kamui_velaa_sindhorn/",
+  //   line: "#",
+  //   deliver: "#",
+  //   grabfood: "https://bit.ly/39eB7e5",
+  //   lineman: "https://lin.ee/sg95db9",
+  //   robinhood: "#",
+  //   gallery: [
+  //     { src: "/assets/shop-gallery/Kamui/01_result.webp" },
+  //     { src: "/assets/shop-gallery/Kamui/02_result.webp" },
+  //     { src: "/assets/shop-gallery/Kamui/03_result.webp" },
+  //     { src: "/assets/shop-gallery/Kamui/04_result.webp" },
+  //     { src: "/assets/shop-gallery/Kamui/05_result.webp" },
+  //     { src: "/assets/shop-gallery/Kamui/06_result.webp" },
+  //     { src: "/assets/shop-gallery/Kamui/07_result.webp" },
+  //     { src: "/assets/shop-gallery/Kamui/08_result.webp" },
+  //     { src: "/assets/shop-gallery/Kamui/09_result.webp" },
+  //     { src: "/assets/shop-gallery/Kamui/10_result.webp" },
+  //     { src: "/assets/shop-gallery/Kamui/11_result.webp" },
+  //   ],
+  // },
 
   {
     id: 11,
@@ -182,6 +310,7 @@ const venders_list = [
       { src: "/assets/shop-gallery/Cloud Dragon/10_result.webp" },
       { src: "/assets/shop-gallery/Cloud Dragon/11_result.webp" },
     ],
+    new: false,
   },
 
   {
@@ -219,6 +348,7 @@ const venders_list = [
       { src: "/assets/shop-gallery/Maison Saigon/12_result.webp" },
       { src: "/assets/shop-gallery/Maison Saigon/13_result.webp" },
     ],
+    new: false,
   },
 
   {
@@ -259,6 +389,7 @@ const venders_list = [
         src: "/assets/shop-gallery/Pizza Bar by Cafe Eiffel/Smoked salmon_result.webp",
       },
     ],
+    new: false,
   },
 
   {
@@ -295,6 +426,7 @@ const venders_list = [
       { src: "/assets/shop-gallery/PETITS PLATS/10_result.webp" },
       { src: "/assets/shop-gallery/PETITS PLATS/11_result.webp" },
     ],
+    new: false,
   },
 
   {
@@ -329,6 +461,7 @@ const venders_list = [
       { src: "/assets/shop-gallery/QUICKIE/08_result.webp" },
       { src: "/assets/shop-gallery/QUICKIE/09_result.webp" },
     ],
+    new: false,
   },
 
   {
@@ -360,6 +493,7 @@ const venders_list = [
       { src: "/assets/shop-gallery/Rongsi Pochana/08_result.webp" },
       { src: "/assets/shop-gallery/Rongsi Pochana/09_result.webp" },
     ],
+    new: false,
   },
 
   {
@@ -394,43 +528,44 @@ const venders_list = [
       { src: "/assets/shop-gallery/Shabu Baru/09_result.webp" },
       { src: "/assets/shop-gallery/Shabu Baru/10_result.webp" },
     ],
+    new: false,
   },
 
-  {
-    id: 2,
-    name: "Izakaya Teppen BBQ&SUSHI",
-    shopImg: "/assets/shoplogo/08.webp",
-    keyword:
-      "TeppenIzakayaJapaneseLucnhdinnerBeerPartyปิ้งย่างอาหารญี่ปุ่นเนื้อวัวซูชิเบียร์เลี้ยงฉลอง",
-    about:
-      "Good Meat, Good Menu, Special service and share special moment. All we have at one place, Teppen Yakiniku.",
-    aboutTH:
-      "ร้านปิ้งย่างยากินิกุ บริหารภายใต้แบรนด์ TEPPEN ที่มุ่งเน้นพัฒนาเมนูเนื้อย่าง กับบรรยากาศร้านสุดพรีเมียม โดยเตาที่ร้านใช้จะเป็นเตาไฟฟ้าดูดกลิ่นทำให้มั่นใจได้ว่า จะไม่มีกลิ่นติดตัวหลังจากทาน",
-    datetime:
-      "Sun - Thu \n Lunch 11:00 AM - 14:00 PM \n Dinner 14:30 PM - 22:00 PM \n Fri-Sat 11:00 AM - 23:00 PM",
-    datetime2: "",
-    tel: "02 115 8008",
-    facebook: "https://www.facebook.com/TeppenYakiniku",
-    ig: "https://www.instagram.com/teppen_yakiniku/",
-    line: "https://bit.ly/LINE_Yakiniku-Sushi",
-    deliver: "https://bit.ly/3ux6qdf",
-    grabfood: "https://bit.ly/3hkO1bP",
-    lineman: "#",
-    robinhood: "#",
-    gallery: [
-      { src: "/assets/shop-gallery/Teppen/01_result.webp" },
-      { src: "/assets/shop-gallery/Teppen/02_result.webp" },
-      { src: "/assets/shop-gallery/Teppen/03_result.webp" },
-      { src: "/assets/shop-gallery/Teppen/04_result.webp" },
-      { src: "/assets/shop-gallery/Teppen/05_result.webp" },
-      { src: "/assets/shop-gallery/Teppen/06_result.webp" },
-      { src: "/assets/shop-gallery/Teppen/07_result.webp" },
-      { src: "/assets/shop-gallery/Teppen/08_result.webp" },
-      { src: "/assets/shop-gallery/Teppen/09_result.webp" },
-      { src: "/assets/shop-gallery/Teppen/10_result.webp" },
-      { src: "/assets/shop-gallery/Teppen/11_result.webp" },
-    ],
-  },
+  // {
+  //   id: 2,
+  //   name: "Izakaya Teppen BBQ&SUSHI",
+  //   shopImg: "/assets/shoplogo/08.webp",
+  //   keyword:
+  //     "TeppenIzakayaJapaneseLucnhdinnerBeerPartyปิ้งย่างอาหารญี่ปุ่นเนื้อวัวซูชิเบียร์เลี้ยงฉลอง",
+  //   about:
+  //     "Good Meat, Good Menu, Special service and share special moment. All we have at one place, Teppen Yakiniku.",
+  //   aboutTH:
+  //     "ร้านปิ้งย่างยากินิกุ บริหารภายใต้แบรนด์ TEPPEN ที่มุ่งเน้นพัฒนาเมนูเนื้อย่าง กับบรรยากาศร้านสุดพรีเมียม โดยเตาที่ร้านใช้จะเป็นเตาไฟฟ้าดูดกลิ่นทำให้มั่นใจได้ว่า จะไม่มีกลิ่นติดตัวหลังจากทาน",
+  //   datetime:
+  //     "Sun - Thu \n Lunch 11:00 AM - 14:00 PM \n Dinner 14:30 PM - 22:00 PM \n Fri-Sat 11:00 AM - 23:00 PM",
+  //   datetime2: "",
+  //   tel: "02 115 8008",
+  //   facebook: "https://www.facebook.com/TeppenYakiniku",
+  //   ig: "https://www.instagram.com/teppen_yakiniku/",
+  //   line: "https://bit.ly/LINE_Yakiniku-Sushi",
+  //   deliver: "https://bit.ly/3ux6qdf",
+  //   grabfood: "https://bit.ly/3hkO1bP",
+  //   lineman: "#",
+  //   robinhood: "#",
+  //   gallery: [
+  //     { src: "/assets/shop-gallery/Teppen/01_result.webp" },
+  //     { src: "/assets/shop-gallery/Teppen/02_result.webp" },
+  //     { src: "/assets/shop-gallery/Teppen/03_result.webp" },
+  //     { src: "/assets/shop-gallery/Teppen/04_result.webp" },
+  //     { src: "/assets/shop-gallery/Teppen/05_result.webp" },
+  //     { src: "/assets/shop-gallery/Teppen/06_result.webp" },
+  //     { src: "/assets/shop-gallery/Teppen/07_result.webp" },
+  //     { src: "/assets/shop-gallery/Teppen/08_result.webp" },
+  //     { src: "/assets/shop-gallery/Teppen/09_result.webp" },
+  //     { src: "/assets/shop-gallery/Teppen/10_result.webp" },
+  //     { src: "/assets/shop-gallery/Teppen/11_result.webp" },
+  //   ],
+  // },
 
   {
     id: 13,
@@ -465,6 +600,7 @@ const venders_list = [
       { src: "/assets/shop-gallery/Vaso/10_result.webp" },
       { src: "/assets/shop-gallery/Vaso/11_result.webp" },
     ],
+    new: false,
   },
 
   {
@@ -500,6 +636,7 @@ const venders_list = [
       { src: "/assets/shop-gallery/Crimson Room/10_result.webp" },
       { src: "/assets/shop-gallery/Crimson Room/11_result.webp" },
     ],
+    new: false,
   },
 
   {
@@ -534,6 +671,7 @@ const venders_list = [
       { src: "/assets/shop-gallery/Acai Story/9_result.webp" },
       { src: "/assets/shop-gallery/Acai Story/10_result.webp" },
     ],
+    new: false,
   },
 
   {
@@ -569,6 +707,7 @@ const venders_list = [
       { src: "/assets/shop-gallery/Peace Oriental Teahouse/10_result.webp" },
       { src: "/assets/shop-gallery/Peace Oriental Teahouse/11_result.webp" },
     ],
+    new: false,
   },
 
   {
@@ -604,6 +743,7 @@ const venders_list = [
       { src: "/assets/shop-gallery/The Coffee Academics/10_result.webp" },
       { src: "/assets/shop-gallery/The Coffee Academics/11_result.webp" },
     ],
+    new: false,
   },
 
   {
@@ -646,42 +786,43 @@ const venders_list = [
         src: "/assets/shop-gallery/Pacamara/SPAGHETTI CHICKEN BOLOGNESE_result.webp",
       },
     ],
+    new: false,
   },
 
-  {
-    id: 5,
-    name: "51' Avenue",
-    shopImg: "/assets/shoplogo/10.webp",
-    keyword:
-      "Englishtea51avenueicedteahotteacultureicecreamsconejammacaroonoysterchampagneอาหารขนมชาอังกฤษไอศครีมแชมเปญ",
-    about:
-      "51 AVENUE Tea Salon First Flagship Store as part of your tea culture experience with more than 200 tea which can be paired with a diversity of foods, from Cold cut dishes to Assam Ice-cream with Earl Gray Tea desserts.",
-    aboutTH:
-      "แฟลกชิพสโตร์แห่งแรก '51 AVENUE' ทีซาลอน แหล่งชาคุณภาพรสเลิศมากกว่า 200 ชนิด ให้คนรักชาได้ลิ้มลอง พร้อมเสิร์ฟประสบการณ์การดื่มชาพร้อมเมนูคาว-หวานให้คุณได้สัมผัส",
-    datetime: "08:30 AM - 21:00 PM",
-    datetime2: "",
-    tel: "062 446 2422",
-    facebook: "https://www.facebook.com/51avenuebkk/",
-    ig: "https://www.instagram.com/51avenuebkk/",
-    line: "#",
-    deliver: "#",
-    grabfood: "#",
-    lineman: "#",
-    robinhood: "#",
-    gallery: [
-      { src: "/assets/shop-gallery/51 Avenue/01_result.webp" },
-      { src: "/assets/shop-gallery/51 Avenue/02_result.webp" },
-      { src: "/assets/shop-gallery/51 Avenue/03_result.webp" },
-      { src: "/assets/shop-gallery/51 Avenue/04_result.webp" },
-      { src: "/assets/shop-gallery/51 Avenue/05_result.webp" },
-      { src: "/assets/shop-gallery/51 Avenue/06_result.webp" },
-      { src: "/assets/shop-gallery/51 Avenue/07_result.webp" },
-      { src: "/assets/shop-gallery/51 Avenue/08_result.webp" },
-      { src: "/assets/shop-gallery/51 Avenue/09_result.webp" },
-      { src: "/assets/shop-gallery/51 Avenue/10_result.webp" },
-      { src: "/assets/shop-gallery/51 Avenue/11_result.webp" },
-    ],
-  },
+  // {
+  //   id: 5,
+  //   name: "51' Avenue",
+  //   shopImg: "/assets/shoplogo/10.webp",
+  //   keyword:
+  //     "Englishtea51avenueicedteahotteacultureicecreamsconejammacaroonoysterchampagneอาหารขนมชาอังกฤษไอศครีมแชมเปญ",
+  //   about:
+  //     "51 AVENUE Tea Salon First Flagship Store as part of your tea culture experience with more than 200 tea which can be paired with a diversity of foods, from Cold cut dishes to Assam Ice-cream with Earl Gray Tea desserts.",
+  //   aboutTH:
+  //     "แฟลกชิพสโตร์แห่งแรก '51 AVENUE' ทีซาลอน แหล่งชาคุณภาพรสเลิศมากกว่า 200 ชนิด ให้คนรักชาได้ลิ้มลอง พร้อมเสิร์ฟประสบการณ์การดื่มชาพร้อมเมนูคาว-หวานให้คุณได้สัมผัส",
+  //   datetime: "08:30 AM - 21:00 PM",
+  //   datetime2: "",
+  //   tel: "062 446 2422",
+  //   facebook: "https://www.facebook.com/51avenuebkk/",
+  //   ig: "https://www.instagram.com/51avenuebkk/",
+  //   line: "#",
+  //   deliver: "#",
+  //   grabfood: "#",
+  //   lineman: "#",
+  //   robinhood: "#",
+  //   gallery: [
+  //     { src: "/assets/shop-gallery/51 Avenue/01_result.webp" },
+  //     { src: "/assets/shop-gallery/51 Avenue/02_result.webp" },
+  //     { src: "/assets/shop-gallery/51 Avenue/03_result.webp" },
+  //     { src: "/assets/shop-gallery/51 Avenue/04_result.webp" },
+  //     { src: "/assets/shop-gallery/51 Avenue/05_result.webp" },
+  //     { src: "/assets/shop-gallery/51 Avenue/06_result.webp" },
+  //     { src: "/assets/shop-gallery/51 Avenue/07_result.webp" },
+  //     { src: "/assets/shop-gallery/51 Avenue/08_result.webp" },
+  //     { src: "/assets/shop-gallery/51 Avenue/09_result.webp" },
+  //     { src: "/assets/shop-gallery/51 Avenue/10_result.webp" },
+  //     { src: "/assets/shop-gallery/51 Avenue/11_result.webp" },
+  //   ],
+  // },
 
   {
     id: 24,
@@ -715,6 +856,7 @@ const venders_list = [
       { src: "/assets/shop-gallery/Apex Slim/09_result.webp" },
       { src: "/assets/shop-gallery/Apex Slim/10_result.webp" },
     ],
+    new: false,
   },
 
   {
@@ -749,6 +891,7 @@ const venders_list = [
       { src: "/assets/shop-gallery/Hive Salon/10_result.webp" },
       { src: "/assets/shop-gallery/Hive Salon/11_result.webp" },
     ],
+    new: false,
   },
 
   {
@@ -781,6 +924,7 @@ const venders_list = [
       { src: "/assets/shop-gallery/Mykita/07_result.webp" },
       { src: "/assets/shop-gallery/Mykita/08_result.webp" },
     ],
+    new: false,
   },
 
   {
@@ -813,40 +957,41 @@ const venders_list = [
       { src: "/assets/shop-gallery/NIC nail salon/07_result.webp" },
       { src: "/assets/shop-gallery/NIC nail salon/08_result.webp" },
     ],
+    new: false,
   },
 
-  {
-    id: 20,
-    name: "Skin Lab",
-    shopImg: "/assets/shoplogo/20.webp",
-    keyword:
-      "SkinLabSkincarecreamtreatmentspa massageZelensดูแลผิวพรรณทรีตเมนต์บริการสกินแคร์ครีมบำรุง",
-    about:
-      "Beauty is More We believe beauty and wellness go hand in hand. And that’s why we advocate for true wellbeing that not only makes you ‘look good’ but makes you ‘feel good’.",
-    aboutTH:
-      "สกิน แล็บ ร้านมัลติแบรนด์ที่รวบรวมสกินแคร์เพื่อความงามจากแบรนด์ชั้นนำจากต่างประเทศ พร้อมสปาส่วนตัวที่ให้คุณได้ผ่อนคลาย",
-    datetime: "11:00 AM - 19:00 PM",
-    datetime2: "",
-    tel: "083 636 3615",
-    facebook: "https://www.facebook.com/skinlabthailand.official",
-    ig: "https://www.instagram.com/skinlabthailand/",
-    line: "https://line.me/ti/p/%40skinlab",
-    deliver: "www.skinlabthailand.com",
-    grabfood: "#",
-    lineman: "#",
-    robinhood: "#",
-    gallery: [
-      { src: "/assets/shop-gallery/Skin Lab/01_result.webp" },
-      { src: "/assets/shop-gallery/Skin Lab/02_result.webp" },
-      { src: "/assets/shop-gallery/Skin Lab/03_result.webp" },
-      { src: "/assets/shop-gallery/Skin Lab/04_result.webp" },
-      { src: "/assets/shop-gallery/Skin Lab/05_result.webp" },
-      { src: "/assets/shop-gallery/Skin Lab/06_result.webp" },
-      { src: "/assets/shop-gallery/Skin Lab/07_result.webp" },
-      { src: "/assets/shop-gallery/Skin Lab/08_result.webp" },
-      { src: "/assets/shop-gallery/Skin Lab/09_result.webp" },
-    ],
-  },
+  // {
+  //   id: 20,
+  //   name: "Skin Lab",
+  //   shopImg: "/assets/shoplogo/20.webp",
+  //   keyword:
+  //     "SkinLabSkincarecreamtreatmentspa massageZelensดูแลผิวพรรณทรีตเมนต์บริการสกินแคร์ครีมบำรุง",
+  //   about:
+  //     "Beauty is More We believe beauty and wellness go hand in hand. And that’s why we advocate for true wellbeing that not only makes you ‘look good’ but makes you ‘feel good’.",
+  //   aboutTH:
+  //     "สกิน แล็บ ร้านมัลติแบรนด์ที่รวบรวมสกินแคร์เพื่อความงามจากแบรนด์ชั้นนำจากต่างประเทศ พร้อมสปาส่วนตัวที่ให้คุณได้ผ่อนคลาย",
+  //   datetime: "11:00 AM - 19:00 PM",
+  //   datetime2: "",
+  //   tel: "083 636 3615",
+  //   facebook: "https://www.facebook.com/skinlabthailand.official",
+  //   ig: "https://www.instagram.com/skinlabthailand/",
+  //   line: "https://line.me/ti/p/%40skinlab",
+  //   deliver: "www.skinlabthailand.com",
+  //   grabfood: "#",
+  //   lineman: "#",
+  //   robinhood: "#",
+  //   gallery: [
+  //     { src: "/assets/shop-gallery/Skin Lab/01_result.webp" },
+  //     { src: "/assets/shop-gallery/Skin Lab/02_result.webp" },
+  //     { src: "/assets/shop-gallery/Skin Lab/03_result.webp" },
+  //     { src: "/assets/shop-gallery/Skin Lab/04_result.webp" },
+  //     { src: "/assets/shop-gallery/Skin Lab/05_result.webp" },
+  //     { src: "/assets/shop-gallery/Skin Lab/06_result.webp" },
+  //     { src: "/assets/shop-gallery/Skin Lab/07_result.webp" },
+  //     { src: "/assets/shop-gallery/Skin Lab/08_result.webp" },
+  //     { src: "/assets/shop-gallery/Skin Lab/09_result.webp" },
+  //   ],
+  // },
 
   {
     id: 25,
@@ -881,6 +1026,7 @@ const venders_list = [
       { src: "/assets/shop-gallery/Villa Market/10_result.webp" },
       { src: "/assets/shop-gallery/Villa Market/11_result.webp" },
     ],
+    new: false,
   },
 
   {
@@ -912,6 +1058,7 @@ const venders_list = [
       { src: "/assets/shop-gallery/Wash Garage/07_result.webp" },
       { src: "/assets/shop-gallery/Wash Garage/08_result.webp" },
     ],
+    new: false,
   },
 ];
 

@@ -165,3 +165,24 @@
     border-image: url("/assets/king2565/R10Border.svg") 10 stretch;
   }
 }
+
+.ribbon-container {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.ribbon {
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 15px;
+  left: -50px;
+  width: 150px;
+  text-align: center;
+  background-color: #ef4444;
+  color: white;
+  padding: 5px 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}

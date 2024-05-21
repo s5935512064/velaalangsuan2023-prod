@@ -31,10 +31,16 @@ const ShopCard: FC<Props> = ({ data }): JSX.Element => {
   return (
     <>
       <div
-        data-aos="zoom-in"
+        // data-aos="zoom-in"
         onClick={openModal}
-        className="overflow-hidden w-full h-fit relative rounded-lg  drop-shadow-sm bg-white"
+        className=" w-full h-fit relative rounded-lg  drop-shadow-sm bg-white group overflow-hidden hover:cursor-pointer"
       >
+        {data.new == true ? (
+          <div className="ribbon-container z-20">
+            <div className="ribbon text-xs">New</div>
+          </div>
+        ) : null}
+
         <Image
           unoptimized
           priority
@@ -44,7 +50,7 @@ const ShopCard: FC<Props> = ({ data }): JSX.Element => {
           height="0"
           sizes="100vw"
           style={{ objectFit: "cover", objectPosition: "center" }}
-          className="w-full h-full hover:scale-110 duration-500 cursor-pointer "
+          className="w-full h-full group-hover:scale-110 duration-500 cursor-pointer "
         />
       </div>
 
