@@ -8,7 +8,7 @@ import ShopCard from "./ShopCard";
 const venders_list = [
   {
     id: 47,
-    name: "Umi",
+    name: "Oyatsu no Jikan ",
     shopImg: "/assets/shop-gallery/Oyatsu/logo_Oyatsu.webp",
     keyword:
       "oyatsuoyatsunojikanstrawberrykakigorichiboustburnfreshstrawberriesdesserttokyothailandขนมหวานคาเฟ่ของหวาน",
@@ -37,6 +37,7 @@ const venders_list = [
     ],
     new: true,
   },
+
   {
     id: 48,
     name: "Kad Kokoa",
@@ -65,13 +66,13 @@ const venders_list = [
       { src: "/assets/shop-gallery/kadkokoa/kadkokoa_04.webp" },
       { src: "/assets/shop-gallery/kadkokoa/kadkokoa_07.webp" },
     ],
-    new: true,
+    new: false,
   },
 
   {
     id: 45,
     name: "Umi",
-    shopImg: "/assets/shop-gallery/umi/logo_umi.webp",
+    shopImg: "/assets/shop-gallery/UmiShop/logo_umi.webp",
     keyword:
       "UmiVelaaUmiBkkSushiOmakaseOmakaseBangkokซูชิแซลม่อนโอมากาเสะอาหารญี่ปุ่นอิซากายะ",
     about:
@@ -89,15 +90,15 @@ const venders_list = [
     lineman: "#",
     robinhood: "#",
     gallery: [
-      { src: "/assets/shop-gallery/umi/umi_01.webp" },
-      { src: "/assets/shop-gallery/umi/umi_03.webp" },
-      { src: "/assets/shop-gallery/umi/umi_04.webp" },
-      { src: "/assets/shop-gallery/umi/umi_05.webp" },
-      { src: "/assets/shop-gallery/umi/umi_02.webp" },
-      { src: "/assets/shop-gallery/umi/umi_06.webp" },
-      { src: "/assets/shop-gallery/umi/umi_07.webp" },
+      { src: "/assets/shop-gallery/UmiShop/umi_01.webp" },
+      { src: "/assets/shop-gallery/UmiShop/umi_03.webp" },
+      { src: "/assets/shop-gallery/UmiShop/umi_04.webp" },
+      { src: "/assets/shop-gallery/UmiShop/umi_05.webp" },
+      { src: "/assets/shop-gallery/UmiShop/umi_02.webp" },
+      { src: "/assets/shop-gallery/UmiShop/umi_06.webp" },
+      { src: "/assets/shop-gallery/UmiShop/umi_07.webp" },
     ],
-    new: true,
+    new: false,
   },
 
   {
@@ -128,7 +129,7 @@ const venders_list = [
       { src: "/assets/shop-gallery/kitsune/kitsune_05.webp" },
       { src: "/assets/shop-gallery/kitsune/kitsune_06.webp" },
     ],
-    new: true,
+    new: false,
   },
 
   {
