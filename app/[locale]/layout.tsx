@@ -1,14 +1,13 @@
-import "../globals.css";
-import "../cookieconsent.css";
 import { prompt } from "@utils/font";
 import Transition from "@/components/Transition";
 import type { Metadata } from "next";
 import { AOSInit } from "@/components/aos";
-import GoogleAnalytics from "@/components/GoogleAnalytics";
 import CookieConsent from "@/components/CookieConsent";
-import EventPopup from "@/components/EventPopup";
 import { Viewport } from "next";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 
+import "../globals.css";
+import "../cookieconsent.css";
 import "react-loading-skeleton/dist/skeleton.css";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import "vanilla-cookieconsent/dist/cookieconsent.css";
@@ -91,12 +90,15 @@ interface Props {
 }
 
 export default function RootLayout({ children, params }: Props) {
+  const ga_id = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS;
   return (
     <html lang={params.locale} className={`${prompt.variable} `}>
-      <EventPopup />
+      <GoogleAnalytics gaId={String(ga_id)} />
+      <GoogleTagManager gtmId={String(ga_id)} />
+
       <CookieConsent />
       <AOSInit />
-      <GoogleAnalytics />
+
       <body className="w-full h-full overflow-x-hidden flex justify-center items-center ">
         <Transition>{children}</Transition>
       </body>

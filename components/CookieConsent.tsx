@@ -8,14 +8,19 @@ export default function CookieConsent() {
   const [data, setData] = useState<any>(null);
 
   useEffect(() => {
-    if (data == null) {
-      const cookiesIP = axios
-        .get("https://api.db-ip.com/v2/free/self")
-        .then((response) => {
-          setData(response.data);
-        });
-    }
-  }, [data]);
+    const fetchIP = async () => {
+      try {
+        const response = await axios.get("https://api.ipify.org?format=json");
+        if (response.status != 200) {
+          throw new Error("Network response was not ok");
+        }
+        setData(response.data.ip);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchIP();
+  }, []);
 
   useEffect(() => {
     if (data) {
@@ -51,9 +56,7 @@ export default function CookieConsent() {
           onAccept: function (cookie: any, user_preferences: any) {
             cc.set("data", {
               value: {
-                ipAddress: data.ipAddress,
-                country: data.countryName,
-                prov: data.stateProv,
+                ipAddress: data.ip,
                 UUID: uuidv4(),
               },
             });

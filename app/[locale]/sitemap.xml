@@ -2,13 +2,19 @@
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
     <loc>https://velaalangsuan.com/en</loc>
-    <lastmod>2024-05-28T11:27:34.340Z</lastmod>
+    <lastmod>2024-05-31T09:03:08.341Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://velaalangsuan.com/en/event</loc>
-    <lastmod>2024-05-28T11:27:34.341Z</lastmod>
+    <lastmod>2024-05-31T09:03:08.343Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://velaalangsuan.com/en/welcome</loc>
+    <lastmod>2024-05-31T09:03:08.343Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
