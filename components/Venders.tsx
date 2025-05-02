@@ -1,11 +1,99 @@
 "use client";
 
-import React, { useState, useEffect, FC } from "react";
-import Image from "next/image";
-import { Dialog, Transition } from "@headlessui/react";
+import React, { useState, FC } from "react";
 import ShopCard from "./ShopCard";
 
 const venders_list = [
+  {
+    id: 51,
+    name: "Vilas วิลาศ",
+    shopImg: "/assets/shop-gallery/vilas/vilas-logo.webp",
+    keyword: "Vilas",
+    about:
+      "Vilas Restaurant, located in Velaa Sindhorn Village, Bangkok, offers a unique dining experience that reimagines traditional Thai cuisine by blending new world ingredients with ancient cooking techniques. The restaurant draws inspiration from King Chulalongkorn's 1897 journey to Europe, during which Thai culinary traditions were enriched with exotic ingredients and cooking methods from abroad. This historical fusion is reflected in Vilas's intriguing menu, which combines exclusive ingredients from other lands with those from Thailand.",
+    aboutTH:
+      "ร้านอาหาร Vilas ตั้งอยู่ที่ Velaa Sindhorn Village กรุงเทพฯ นำเสนอประสบการณ์การรับประทานอาหารที่ไม่เหมือนใคร ด้วยการผสมผสานวัตถุดิบจากทั่วโลกเข้ากับเทคนิคการปรุงอาหารแบบดั้งเดิม ร้านได้แรงบันดาลใจจากการเสด็จประพาสยุโรปของรัชกาลที่ 5 ในปี พ.ศ. 2440 ซึ่งในครั้งนั้นได้มีการผสมผสานวัฒนธรรมการทำอาหารไทยเข้ากับวัตถุดิบและวิธีการปรุงอาหารจากต่างแดน การผสมผสานทางประวัติศาสตร์นี้สะท้อนให้เห็นในเมนูอันน่าสนใจของ Vilas ที่นำวัตถุดิบพิเศษจากต่างแดนมาผสมผสานกับวัตถุดิบจากประเทศไทย",
+    datetime: "17:30 AM - 23:00 PM",
+    datetime2: "",
+    tel: "094-997-8631",
+    facebook: "https://www.facebook.com/vilasbkk",
+    ig: "https://www.instagram.com/vilasbkk/",
+    line: "https://line.me/R/ti/p/@vilasbkk",
+    deliver: "#",
+    grabfood: "#",
+    lineman: "#",
+    robinhood: "#",
+    gallery: [
+      { src: "/assets/shop-gallery/vilas/vilas-1.jpg" },
+      { src: "/assets/shop-gallery/vilas/vilas-2.jpg" },
+      { src: "/assets/shop-gallery/vilas/vilas-3.jpg" },
+      { src: "/assets/shop-gallery/vilas/vilas-4.jpg" },
+      { src: "/assets/shop-gallery/vilas/vilas-5.jpg" },
+      { src: "/assets/shop-gallery/vilas/vilas-6.jpg" },
+      { src: "/assets/shop-gallery/vilas/vilas-7.jpg" },
+    ],
+    new: true,
+  },
+  {
+    id: 50,
+    name: "Louk In Louk Jaan - ลูกอินลูกจัน",
+    shopImg: "/assets/shop-gallery/LILJ/lilj_logo-01.webp",
+    keyword: "LoujkInLoukJaanThaiFood",
+    about:
+      "stands for a unique fruit with two distinct flavors growing harmoniously on the same tree just like our creative approach to blending authentic tastes with a playful twist, crafted by the talented chefs from Saneh Jaan. At 'Louk In Louk Jaan' we present a menu that combines time-honored 'recipes with the exciting creations' of our chefs, ensuring every guest enjoys a dining experience that is truly one of a kind. The moment you step into 'Louk In Louk Jaan' you'll be greeted with a warm yet modern ambiance. Our decor balances simplicity and charm, blending natural elements with vibrant colors to create an inviting atmosphere that feels like a casual gathering with close friends.",
+    aboutTH:
+      "ร้านอาหารไทยแท้ที่เกิดจากแรงบันดาลใจจากขนมไทย 'เสน่ห์จันทน์' ที่เป็น signature menu และชื่อร้านเสน่ห์จันทน์ ที่มาจากผลไม้ที่มีชื่อเดียวกัน 'ลูกอินลูกจัน' เป็นผลไม้ที่มีเอกลักษณ์ที่แตกต่างกัน แต่เกิดในต้นไม้ต้นเดียวกันอย่างลงตัว เปรียบเสมือนการสร้างสรรค์เมนูที่มีรสชาติแท้แต่เต็มไปด้วยความสนุกสนานจาก 'เมนูลับหลังร้าน' ของเชฟเสน่ห์จันทน์ 'ลูกอินลูกจัน' นำเสนอ เมนูที่เป็นการผสมผสานระหว่างสูตรดั้งเดิม และความสนุกของเชฟที่คิดสูตรลับหลังร้าน เพื่อให้ลูกค้าทุกคนได้สัมผัสกับความอร่อยที่ไม่เหมือนใคร เมื่อคุณก้าวเข้ามาที่ 'ลูกอินลูกจัน' คุณจะได้พบกับบรรยากาศที่อบอุ่น แต่มีความทันสมัย การตกแต่งที่เรียบง่ายแต่มีเสน่ห์ ผสมผสานระหว่างธรรมชาติ และสีสันที่สนุก สร้างความรู้สึกเหมือนกำลังสังสรรค์อย่างเป็นกันเองกับเพื่อนที่รู้ใจ",
+    datetime: "11:00 AM - 22:00 PM",
+    datetime2: "",
+    tel: "092-254-6588",
+    facebook: "https://www.facebook.com/loukinloukjaan",
+    ig: "https://www.instagram.com/loukinloukjaan",
+    line: "https://line.me/R/ti/p/@loukinloukjaan?from=page&searchId=loukinloukjaan",
+    deliver: "#",
+    grabfood: "#",
+    lineman: "#",
+    robinhood: "#",
+    gallery: [
+      { src: "/assets/shop-gallery/LILJ/166.webp" },
+      { src: "/assets/shop-gallery/LILJ/172.webp" },
+      { src: "/assets/shop-gallery/LILJ/174.webp" },
+      { src: "/assets/shop-gallery/LILJ/178.webp" },
+      { src: "/assets/shop-gallery/LILJ/180.webp" },
+      { src: "/assets/shop-gallery/LILJ/181.webp" },
+      { src: "/assets/shop-gallery/LILJ/182.webp" },
+      { src: "/assets/shop-gallery/LILJ/183.webp" },
+      { src: "/assets/shop-gallery/LILJ/189.webp" },
+    ],
+    new: true,
+  },
+  {
+    id: 49,
+    name: "PP SPACE",
+    shopImg: "/assets/shop-gallery/PP/pp-sapce-01.webp",
+    keyword: "PP SPACE",
+    about:
+      "A new Multi-Brand Store featuring products from Maison Kitsuné, Tory Burch, Off-White™ and other brands ready for you to shop today",
+    aboutTH:
+      "ร้าน Multi-Brand Store ใหม่ พร้อมสินค้าจากแบรนด์ Maison Kitsuné, Tory Burch, Off-White™ และแบรนด์อื่นๆ ให้คุณได้ช้อปแล้ววันนี้",
+    datetime: "10:00 AM - 20:00 PM",
+    datetime2: "",
+    tel: "",
+    facebook: "https://www.facebook.com/ppgroupthailand",
+    ig: "https://www.instagram.com/ppgroupthailand",
+    line: "#",
+    deliver: "#",
+    grabfood: "#",
+    lineman: "#",
+    robinhood: "#",
+    gallery: [
+      { src: "/assets/shop-gallery/PP/pp-gallery-1.jpg" },
+      { src: "/assets/shop-gallery/PP/pp-gallery-2.jpg" },
+      { src: "/assets/shop-gallery/PP/pp-gallery-3.jpg" },
+      { src: "/assets/shop-gallery/PP/pp-gallery-4.jpg" },
+      { src: "/assets/shop-gallery/PP/pp-gallery-5.jpg" },
+    ],
+    new: true,
+  },
   {
     id: 16,
     name: "Pizza Bar by Café Eiffel",
@@ -53,7 +141,7 @@ const venders_list = [
         src: "/assets/shop-gallery/Pizza Bar by Cafe Eiffel/471_0.webp",
       },
     ],
-    new: true,
+    new: false,
   },
   {
     id: 47,
@@ -189,41 +277,41 @@ const venders_list = [
     ],
     new: false,
   },
-  {
-    id: 44,
-    name: "Café Kitsuné",
-    shopImg: "/assets/shop-gallery/kitsune/logo_kisune.webp",
-    keyword:
-      "CaféKitsunécaféandbarJapaneseFoxShortbreadmatchachocolateAvocadoToastCroqueMonsieurWineSake",
-    about:
-      "Café Kitsuné, Thailand's first café and bar, immerse yourself in our minimalist ambiance, where French elegance meets Japanese refinement. Admire our signature fox emblem décor, a symbol of Kitsuné's rich heritage. Savor our new menu items, featuring Fox Shortbread in matcha and chocolate flavors, Avocado Toast, Katsu Sando, and Croque Monsieur. Elevate your dining experience with our curated selection of Natural Wine and Sake, exclusively available at our Velaa Sindhorn Village branch.",
-    aboutTH:
-      "Café Kitsuné คาเฟ่และบาร์ แห่งแรกในไทย ตกแต่งในสไตล์โมเดิร์น และมินิมอล สื่อถึงการผสมผสานระหว่างฝรั่งเศสและญี่ปุ่น ยกระดับความโมเดิร์นด้วยไม้โอ๊กแกะสลักรูปทรงสุนัขจิ้งจอก ซึ่งเป็นสัญลักษณ์ของแบรนด์คิทสึเนะ พร้อมเมนูใหม่ อาทิ Fox Shortbread รสชาเขียวและช็อกโกแลต ไปจนถึง Avocado Toast, Katsu Sando และ Croque Monsieur เพิ่มความพิเศษของการเป็นคาเฟ่และบาร์แห่งแรกด้วย Natural Wine และ Sake ที่ถูกคัดสรรมา สำหรับสาขานี้โดยเฉพาะ",
-    datetime: "09:00 AM - 21:00 PM",
-    datetime2: "",
-    tel: "02 000 0673",
-    facebook: "https://www.facebook.com/profile.php?id=100089582513330",
-    ig: "https://www.instagram.com/cafekitsune",
-    line: "https://line.me/ti/p/%40CafeKitsune_TH",
-    deliver: "#",
-    grabfood: "#",
-    lineman: "#",
-    robinhood: "#",
-    gallery: [
-      { src: "/assets/shop-gallery/kitsune/09.webp" },
-      { src: "/assets/shop-gallery/kitsune/10.webp" },
-      { src: "/assets/shop-gallery/kitsune/11.webp" },
-      { src: "/assets/shop-gallery/kitsune/12.webp" },
-      { src: "/assets/shop-gallery/kitsune/08.webp" },
-      { src: "/assets/shop-gallery/kitsune/07.webp" },
-      { src: "/assets/shop-gallery/kitsune/06.webp" },
-      { src: "/assets/shop-gallery/kitsune/05.webp" },
-      { src: "/assets/shop-gallery/kitsune/04.webp" },
-      { src: "/assets/shop-gallery/kitsune/03.webp" },
-      { src: "/assets/shop-gallery/kitsune/01.webp" },
-    ],
-    new: false,
-  },
+  // {
+  //   id: 44,
+  //   name: "Café Kitsuné",
+  //   shopImg: "/assets/shop-gallery/kitsune/logo_kisune.webp",
+  //   keyword:
+  //     "CaféKitsunécaféandbarJapaneseFoxShortbreadmatchachocolateAvocadoToastCroqueMonsieurWineSake",
+  //   about:
+  //     "Café Kitsuné, Thailand's first café and bar, immerse yourself in our minimalist ambiance, where French elegance meets Japanese refinement. Admire our signature fox emblem décor, a symbol of Kitsuné's rich heritage. Savor our new menu items, featuring Fox Shortbread in matcha and chocolate flavors, Avocado Toast, Katsu Sando, and Croque Monsieur. Elevate your dining experience with our curated selection of Natural Wine and Sake, exclusively available at our Velaa Sindhorn Village branch.",
+  //   aboutTH:
+  //     "Café Kitsuné คาเฟ่และบาร์ แห่งแรกในไทย ตกแต่งในสไตล์โมเดิร์น และมินิมอล สื่อถึงการผสมผสานระหว่างฝรั่งเศสและญี่ปุ่น ยกระดับความโมเดิร์นด้วยไม้โอ๊กแกะสลักรูปทรงสุนัขจิ้งจอก ซึ่งเป็นสัญลักษณ์ของแบรนด์คิทสึเนะ พร้อมเมนูใหม่ อาทิ Fox Shortbread รสชาเขียวและช็อกโกแลต ไปจนถึง Avocado Toast, Katsu Sando และ Croque Monsieur เพิ่มความพิเศษของการเป็นคาเฟ่และบาร์แห่งแรกด้วย Natural Wine และ Sake ที่ถูกคัดสรรมา สำหรับสาขานี้โดยเฉพาะ",
+  //   datetime: "09:00 AM - 21:00 PM",
+  //   datetime2: "",
+  //   tel: "02 000 0673",
+  //   facebook: "https://www.facebook.com/profile.php?id=100089582513330",
+  //   ig: "https://www.instagram.com/cafekitsune",
+  //   line: "https://line.me/ti/p/%40CafeKitsune_TH",
+  //   deliver: "#",
+  //   grabfood: "#",
+  //   lineman: "#",
+  //   robinhood: "#",
+  //   gallery: [
+  //     { src: "/assets/shop-gallery/kitsune/09.webp" },
+  //     { src: "/assets/shop-gallery/kitsune/10.webp" },
+  //     { src: "/assets/shop-gallery/kitsune/11.webp" },
+  //     { src: "/assets/shop-gallery/kitsune/12.webp" },
+  //     { src: "/assets/shop-gallery/kitsune/08.webp" },
+  //     { src: "/assets/shop-gallery/kitsune/07.webp" },
+  //     { src: "/assets/shop-gallery/kitsune/06.webp" },
+  //     { src: "/assets/shop-gallery/kitsune/05.webp" },
+  //     { src: "/assets/shop-gallery/kitsune/04.webp" },
+  //     { src: "/assets/shop-gallery/kitsune/03.webp" },
+  //     { src: "/assets/shop-gallery/kitsune/01.webp" },
+  //   ],
+  //   new: false,
+  // },
 
   {
     id: 4,
@@ -1143,7 +1231,7 @@ const Venders: FC<Props> = (): JSX.Element => {
       <div className="w-full flex flex-col md:flex-row justify-between items-center gap-6">
         <div className="text-center md:text-left">
           <h1 className="font-bold text-2xl xs:text-4xl uppercase">
-            OUR venders
+            Our Vendors
           </h1>
         </div>
 

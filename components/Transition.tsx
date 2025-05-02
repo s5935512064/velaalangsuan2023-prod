@@ -1,6 +1,6 @@
 "use client";
 
-import React, { FC, useEffect, useState, useRef } from "react";
+import React, { FC, useRef } from "react";
 import { AnimatePresence } from "framer-motion";
 import { motion } from "framer-motion";
 import EventPopup from "./EventPopup";

@@ -185,7 +185,7 @@ export default function Home() {
                 href="#"
               >
                 <p className="text-black/80 hover:text-black   font-medium uppercase cursor-pointer duration-200 transition-all">
-                  Our Vender
+                  Our Vendors
                 </p>
               </Link>
 
@@ -324,7 +324,7 @@ export default function Home() {
               href="#"
             >
               <p className="text-black/80 hover:text-black text-xs sm:text-sm inline-flex font-medium uppercase cursor-pointer duration-200 transition-all  whitespace-nowrap">
-                Our Vender
+                Our Vendors
               </p>
             </Link>
 
@@ -652,17 +652,17 @@ export default function Home() {
       >
         <div className="max-w-7xl w-full h-full flex flex-col-reverse md:flex-row justify-center md:justify-between items-center gap-2">
           <p className="text-white text-xs  md:text-sm text-center ">
-            © 2022{String(year) != "2022" ? `- ${year}` : null},
+            Copyright © 2022{String(year) != "2022" ? `- ${year}` : null}{" "}
             <Link2 href={"https://siamsindhorn.com/"} legacyBehavior>
               <a
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-bold cursor-pointer"
               >
-                Siam Sindhorn
+                Siam Sindhorn Co., Ltd.
               </a>
             </Link2>{" "}
-            Co.,Ltd. All Rights Reserved.
+            All Rights Reserved.
           </p>
 
           <div className="flex gap-4 text-white text-xs md:text-sm divide-x-2 divide-white">

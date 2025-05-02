@@ -2,19 +2,19 @@
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
     <loc>https://cms.ssdapp.net/api/en</loc>
-    <lastmod>2024-12-02T09:22:18.545Z</lastmod>
+    <lastmod>2025-05-02T06:30:52.764Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://cms.ssdapp.net/api/en/event</loc>
-    <lastmod>2024-12-02T09:22:18.545Z</lastmod>
+    <lastmod>2025-05-02T06:30:52.765Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://cms.ssdapp.net/api/en/welcome</loc>
-    <lastmod>2024-12-02T09:22:18.545Z</lastmod>
+    <lastmod>2025-05-02T06:30:52.765Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>

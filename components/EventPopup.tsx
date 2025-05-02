@@ -1,13 +1,7 @@
 "use client";
 
-import Link from "next/link";
-import React, { FC, useEffect, useState, useRef, Fragment } from "react";
-import {
-  Description,
-  Dialog,
-  DialogPanel,
-  DialogTitle,
-} from "@headlessui/react";
+import React, { FC, useEffect, useState } from "react";
+import { Dialog } from "@headlessui/react";
 import Image from "next/image";
 import axios, { AxiosRequestConfig } from "axios";
 
@@ -59,6 +53,7 @@ const EventPopup: FC<Props> = (): JSX.Element => {
           `https://cms.ssdapp.net/api/events?websiteId=VEL`,
           configAxios
         );
+
         if (
           response.status == 200 &&
           response.data != "No event found in the database."
@@ -83,10 +78,9 @@ const EventPopup: FC<Props> = (): JSX.Element => {
       <Dialog
         open={isOpen}
         onClose={() => false}
-        transition
         className="fixed inset-0 flex w-screen items-center justify-center bg-black/30 p-4 transition duration-300 ease-out data-[closed]:opacity-0 z-50"
       >
-        <DialogPanel
+        <Dialog.Panel
           as="div"
           className="h-fit w-fit rounded-md space-y-4 p-6 md:p-8 xl:p-14 relative overflow-hidden "
           style={{
@@ -98,7 +92,7 @@ const EventPopup: FC<Props> = (): JSX.Element => {
         >
           <button
             type="button"
-            className="size-7 md:size-10 bg-white text-black rounded-full absolute right-4 top-4 flex justify-center items-center z-20"
+            className="w-7 h-7 md:w-10 md:h-10 bg-white text-black rounded-full absolute right-4 top-4 flex justify-center items-center z-20"
             onClick={closeModal}
           >
             <svg
@@ -107,7 +101,7 @@ const EventPopup: FC<Props> = (): JSX.Element => {
               viewBox="0 0 24 24"
               strokeWidth="1.5"
               stroke="currentColor"
-              className="size-5 md:size-6 shrink-0"
+              className="w-5 h-5 md:w-6 md:h-6 shrink-0"
             >
               <path
                 strokeLinecap="round"
@@ -128,7 +122,7 @@ const EventPopup: FC<Props> = (): JSX.Element => {
                 height={0}
                 className="w-full h-full object-contain object-center absolute inset-0 scale-[0.80] md:scale-[0.9] drop-shadow-md "
               />
-              <div className="size-24 md:size-32 absolute top-0 -left-2  md:hidden     ">
+              <div className="w-20 h-20 md:w-32 md:h-32 absolute top-4 left-0  md:hidden     ">
                 <Image
                   src={data.signImg}
                   alt="sign"
@@ -136,16 +130,16 @@ const EventPopup: FC<Props> = (): JSX.Element => {
                   quality={100}
                   width={0}
                   height={0}
-                  className="w-full h-full object-contain object-center  "
+                  className="w-full h-full object-contain object-center   "
                 />
               </div>
             </div>
 
             <div
               style={{ color: data.color }}
-              className="flex flex-col justify-center items-center gap-2 md:gap-2 max-w-sm -mt-20 md:mt-0 md:-translate-x-5 scale-95 md:scale-100"
+              className="flex flex-col justify-center items-center gap-2 md:gap-2 max-w-sm -mt-2 md:mt-0 md:-translate-x-5 scale-95 md:scale-100"
             >
-              <div className="size-32 relative hidden md:block  ">
+              <div className="w-32 h-32 relative hidden md:block">
                 <Image
                   src={data.signImg}
                   alt="sign"
@@ -189,7 +183,7 @@ const EventPopup: FC<Props> = (): JSX.Element => {
               </p>
             </div>
           </div>
-        </DialogPanel>
+        </Dialog.Panel>
       </Dialog>
     </>
   );

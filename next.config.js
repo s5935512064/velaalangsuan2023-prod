@@ -11,7 +11,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 const nextConfig = {
     env: {
         NEXT_PUBLIC_GOOGLE_ANALYTICS: String(process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS),
-        NEXT_BEARER_TOKEN: process.env.NEXT_BEARER_TOKEN
+        NEXT_BEARER_TOKEN: String(process.env.NEXT_BEARER_TOKEN)
     },
 
     images: {
