@@ -3,7 +3,7 @@
 import React, { FC, useEffect, useState, useRef } from "react";
 import { AnimatePresence } from "framer-motion";
 import { motion } from "framer-motion";
-
+import EventPopup from "./EventPopup";
 interface Props {
   children: React.ReactNode;
 }
@@ -36,6 +36,7 @@ const Transition: FC<Props> = ({ children }): JSX.Element => {
           exit="exit"
           className="w-full h-full"
         >
+          <EventPopup />
           {children}
         </motion.main>
       </AnimatePresence>

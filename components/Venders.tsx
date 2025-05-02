@@ -7,36 +7,51 @@ import ShopCard from "./ShopCard";
 
 const venders_list = [
   {
-    id: 48,
-    name: "KURA langsuan Premium Yakiniku & Sushi",
-    shopImg: "/assets/shop-gallery/Kura/logo_kura.webp",
+    id: 16,
+    name: "Pizza Bar by Café Eiffel",
+    shopImg: "/assets/shop-gallery/Pizza Bar by Cafe Eiffel/logo_pizza.webp",
     keyword:
-      "ENTERTAINMENTJAPANESEYAKINIKUDINNINGLucnhdinnerBeerPartyปิ้งย่างอาหารญี่ปุ่นเนื้อวัวซูชิเบียร์เลี้ยงฉลอง",
+      "CaféEiffelPizzabarParmahamSeafoodPepperoniMargheritaSmokedSalmonTruffleFriedchickenbeerlagerพิซซ่าเบียร์พามาแฮมไก่ทอดเฟรนส์ฟรายซีฟู้ดแซลมอน",
     about:
-      "We chose to name our restaurant 'Kura', to symbolize our style of yakiniku grill dining, where we carefully gather the finest ingredients and prepare them with meticulous attention by professional chefs, allowing everyone to indulge in authentic Japanese-style dishes without barriers!",
+      "Pizza and pasta, beloved foods that have captured hearts worldwide, are familiar to many. We know the thin, crispy pizza crust topped with tomato sauce, cheese, and various toppings, as well as the delectable pasta dishes. But have you ever wondered about the origins of these cherished meals? 'Sugo' the thick red sauce essential to both pizza and pasta, has a fascinating history. In Italian, 'sugo' simply means 'sauce', Its concept can be traced back to the tomato sauce invented by the Aztecs. When the Spanish occupied Mexico, they introduced this tomato sauce to Europe, where it evolved into the sugo we know today.",
     aboutTH:
-      "'คุระ' สื่อถึงการเป็นร้านปิ้งย่างสไตล์ยากินิกุ ที่เก็บรวบรวมวัตถุดิบสุดล้ำค่าไว้ พร้อมนำมาปรุงด้วยความพิถีพิถันโดยเชฟมืออาชีพ เพื่อให้ทุกท่านได้เพลิดเพลินกับเมนูแสนอร่อยตามแบบฉบับญี่ปุ่นแท้ๆ แบบไม่มีอะไรมากั้นนั่นเอง!",
-    datetime: "Daily 11.00 AM - 22.00 PM \nFri - Sat 11.00 AM -23.00 PM",
+      "พิซซ่าและพาสต้า อาหารยอดนิยมที่ครองใจผู้คนทั่วโลก ใครๆ ก็รู้จักแป้งพิซซ่าบางกรอบ ราดด้วยซอสมะเขือเทศ ชีส และท็อปปิ้งหลากหลาย รวมถึงเมนูพาสต้าแสนอร่อย แต่คุณเคยสงสัยไหมว่าอาหารเลิศรสเหล่านี้มีที่มาอย่างไร? ซอสแดงเข้มข้นที่เป็นหัวใจสำคัญของทั้งพิซซ่าและพาสต้า มีประวัติความเป็นมาที่น่าทึ่ง คำว่า 'ซูโก้' ในภาษาอิตาลีแปลว่า 'ซอส' โดยมีรากเหง้ามาจากซอสมะเขือเทศที่ชาวแอซเท็กคิดค้น เมื่อสเปนเข้ายึดครองเม็กซิโก พวกเขาได้นำซอสนี้เข้าสู่ยุโรป ซึ่งต่อมาได้วิวัฒนาการกลายเป็นซูโก้อย่างที่เรารู้จักในปัจจุบัน",
+    datetime: "11:00 AM - 21:00 PM",
     datetime2: "",
-    tel: "02 115 8008",
-    facebook: "https://www.facebook.com/Kura.langsuan",
-    ig: "https://www.instagram.com/kura_langsuan",
-    line: "https://line.me/ti/p/%40kuraofficial",
-    deliver: "https://linktr.ee/kura_premium",
+    tel: "0610185385",
+    facebook: "https://www.facebook.com/EiffelBakery",
+    ig: "https://www.instagram.com/cafeeiffel_bakery/",
+    line: "https://lin.ee/nNP7vuS",
+    deliver: "#",
     grabfood: "#",
     lineman: "#",
     robinhood: "#",
     gallery: [
-      { src: "/assets/shop-gallery/Kura/Kura01.webp" },
-      { src: "/assets/shop-gallery/Kura/Kura02.webp" },
-      { src: "/assets/shop-gallery/Kura/Kura03.webp" },
-      { src: "/assets/shop-gallery/Kura/Kura04.webp" },
-      { src: "/assets/shop-gallery/Kura/Kura05.webp" },
-      { src: "/assets/shop-gallery/Kura/Kura06.webp" },
-      { src: "/assets/shop-gallery/Kura/Kura07.webp" },
-      { src: "/assets/shop-gallery/Kura/Kura08.webp" },
-      { src: "/assets/shop-gallery/Kura/Kura09.webp" },
-      { src: "/assets/shop-gallery/Kura/Kura10.webp" },
+      { src: "/assets/shop-gallery/Pizza Bar by Cafe Eiffel/456_0.webp" },
+      {
+        src: "/assets/shop-gallery/Pizza Bar by Cafe Eiffel/458_0.webp",
+      },
+      {
+        src: "/assets/shop-gallery/Pizza Bar by Cafe Eiffel/460_0.webp",
+      },
+      {
+        src: "/assets/shop-gallery/Pizza Bar by Cafe Eiffel/462_0.webp",
+      },
+      {
+        src: "/assets/shop-gallery/Pizza Bar by Cafe Eiffel/465.webp",
+      },
+      {
+        src: "/assets/shop-gallery/Pizza Bar by Cafe Eiffel/467_0.webp",
+      },
+      {
+        src: "/assets/shop-gallery/Pizza Bar by Cafe Eiffel/468_0.webp",
+      },
+      {
+        src: "/assets/shop-gallery/Pizza Bar by Cafe Eiffel/470_0.webp",
+      },
+      {
+        src: "/assets/shop-gallery/Pizza Bar by Cafe Eiffel/471_0.webp",
+      },
     ],
     new: true,
   },
@@ -75,7 +90,7 @@ const venders_list = [
       { src: "/assets/shop-gallery/Oyatsu/IMG_9356.webp" },
       { src: "/assets/shop-gallery/Oyatsu/IMG_9342.webp" },
     ],
-    new: true,
+    new: false,
   },
 
   {
@@ -140,7 +155,40 @@ const venders_list = [
     ],
     new: false,
   },
-
+  {
+    id: 48,
+    name: "KURA langsuan Premium Yakiniku & Sushi",
+    shopImg: "/assets/shop-gallery/Kura/logo_kura.webp",
+    keyword:
+      "ENTERTAINMENTJAPANESEYAKINIKUDINNINGLucnhdinnerBeerPartyปิ้งย่างอาหารญี่ปุ่นเนื้อวัวซูชิเบียร์เลี้ยงฉลอง",
+    about:
+      "We chose to name our restaurant 'Kura', to symbolize our style of yakiniku grill dining, where we carefully gather the finest ingredients and prepare them with meticulous attention by professional chefs, allowing everyone to indulge in authentic Japanese-style dishes without barriers!",
+    aboutTH:
+      "'คุระ' สื่อถึงการเป็นร้านปิ้งย่างสไตล์ยากินิกุ ที่เก็บรวบรวมวัตถุดิบสุดล้ำค่าไว้ พร้อมนำมาปรุงด้วยความพิถีพิถันโดยเชฟมืออาชีพ เพื่อให้ทุกท่านได้เพลิดเพลินกับเมนูแสนอร่อยตามแบบฉบับญี่ปุ่นแท้ๆ แบบไม่มีอะไรมากั้นนั่นเอง!",
+    datetime: "Daily 11.00 AM - 22.00 PM \nFri - Sat 11.00 AM -23.00 PM",
+    datetime2: "",
+    tel: "02 115 8008",
+    facebook: "https://www.facebook.com/Kura.langsuan",
+    ig: "https://www.instagram.com/kura_langsuan",
+    line: "https://line.me/ti/p/%40kuraofficial",
+    deliver: "https://linktr.ee/kura_premium",
+    grabfood: "#",
+    lineman: "#",
+    robinhood: "#",
+    gallery: [
+      { src: "/assets/shop-gallery/Kura/Kura01.webp" },
+      { src: "/assets/shop-gallery/Kura/Kura02.webp" },
+      { src: "/assets/shop-gallery/Kura/Kura03.webp" },
+      { src: "/assets/shop-gallery/Kura/Kura04.webp" },
+      { src: "/assets/shop-gallery/Kura/Kura05.webp" },
+      { src: "/assets/shop-gallery/Kura/Kura06.webp" },
+      { src: "/assets/shop-gallery/Kura/Kura07.webp" },
+      { src: "/assets/shop-gallery/Kura/Kura08.webp" },
+      { src: "/assets/shop-gallery/Kura/Kura09.webp" },
+      { src: "/assets/shop-gallery/Kura/Kura10.webp" },
+    ],
+    new: false,
+  },
   {
     id: 44,
     name: "Café Kitsuné",
@@ -396,48 +444,6 @@ const venders_list = [
     ],
     new: false,
   },
-
-  {
-    id: 16,
-    name: "Pizza Bar by Café Eiffel",
-    shopImg: "/assets/shoplogo/14.webp",
-    keyword:
-      "CaféEiffelPizzabarParmahamSeafoodPepperoniMargheritaSmokedSalmonTruffleFriedchickenbeerlagerพิซซ่าเบียร์พามาแฮมไก่ทอดเฟรนส์ฟรายซีฟู้ดแซลมอน",
-    about:
-      "Step up your pizza taste and take a slice out of the wood-fired oven life with Pizza Bay by Café Eiffel.",
-    aboutTH:
-      "Pizza เตาฟืนแบบดั้งเดิม หลากหลายหน้าให้เลือก อาทิ Parma Ham, Seafood, Pepperoni, Margherita, Smoked salmon, Truffle",
-    datetime: "11:00 AM - 21:00 PM",
-    datetime2: "",
-    tel: "061 018 5385",
-    facebook: "https://www.facebook.com/EiffelBakery",
-    ig: "https://www.instagram.com/cafeeiffel_bakery/",
-    line: "https://lin.ee/nNP7vuS",
-    deliver: "#",
-    grabfood: "#",
-    lineman: "#",
-    robinhood: "#",
-    gallery: [
-      { src: "/assets/shop-gallery/Pizza Bar by Cafe Eiffel/1_result.webp" },
-      {
-        src: "/assets/shop-gallery/Pizza Bar by Cafe Eiffel/Eiffel Pizza3419 (Medium)_result.webp",
-      },
-      {
-        src: "/assets/shop-gallery/Pizza Bar by Cafe Eiffel/Margherita_result.webp",
-      },
-      {
-        src: "/assets/shop-gallery/Pizza Bar by Cafe Eiffel/Pepperoni_result.webp",
-      },
-      {
-        src: "/assets/shop-gallery/Pizza Bar by Cafe Eiffel/Seafood_result.webp",
-      },
-      {
-        src: "/assets/shop-gallery/Pizza Bar by Cafe Eiffel/Smoked salmon_result.webp",
-      },
-    ],
-    new: false,
-  },
-
   {
     id: 12,
     name: "Petits Plats - French Mediterranean Cuisine",

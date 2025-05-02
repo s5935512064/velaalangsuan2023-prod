@@ -108,9 +108,9 @@ export default function Event() {
   useEffect(() => {
     if (typeof window !== "undefined") {
       const snowflake1 = document.createElement("img");
-      snowflake1.src = "/assets/leaf.webp";
+      snowflake1.src = "/assets/snow.png";
       const snowflake2 = document.createElement("img");
-      snowflake2.src = "/assets/leaf-2.png";
+      snowflake2.src = "/assets/snow.png";
 
       const image = [snowflake1, snowflake2];
       //@ts-ignore
@@ -121,7 +121,7 @@ export default function Event() {
   return (
     <>
       <div className="min-h-screen w-full  relative pb-40">
-        {/* <figure className="absolute w-full h-full">
+        <figure className="absolute w-full h-full">
           <audio
             id="audio-player"
             controls={true}
@@ -132,7 +132,7 @@ export default function Event() {
           >
             <source src="/assets/chirtmas.mp3" type="audio/mpeg"></source>
           </audio>
-        </figure> */}
+        </figure>
 
         <Snowfall
           // The color of the snowflake, can be any valid CSS color.
@@ -161,7 +161,7 @@ export default function Event() {
               <div className="relative flex justify-center items-center h-24 w-[170px]">
                 <Image
                   priority={true}
-                  src="/assets/LOGO-GREEN.webp"
+                  src="/assets/logo_christmas.png"
                   alt="logo"
                   sizes="100vw"
                   width="0"
@@ -383,7 +383,7 @@ export default function Event() {
                 </a>
               </Link>
 
-              {/* <button
+              <button
                 type="button"
                 className=" text-center  cursor-pointer text-black w-9 h-9"
                 onClick={() => {
@@ -410,7 +410,7 @@ export default function Event() {
                     <path d="M15.932 7.757a.75.75 0 011.061 0 6 6 0 010 8.486.75.75 0 01-1.06-1.061 4.5 4.5 0 000-6.364.75.75 0 010-1.06z" />
                   </svg>
                 )}
-              </button> */}
+              </button>
             </div>
           </div>
         </section>

@@ -2,13 +2,46 @@
 
 import Link from "next/link";
 import React, { FC, useEffect, useState, useRef, Fragment } from "react";
-import { Dialog, Transition } from "@headlessui/react";
+import {
+  Description,
+  Dialog,
+  DialogPanel,
+  DialogTitle,
+} from "@headlessui/react";
 import Image from "next/image";
+import axios, { AxiosRequestConfig } from "axios";
+
+const configAxios: AxiosRequestConfig = {
+  headers: {
+    "Content-Type": "application/json",
+    Authorization: `Bearer ${process.env.NEXT_BEARER_TOKEN}`,
+  },
+};
 
 interface Props {}
 
+type EventObject = {
+  id: number;
+  eventId: string;
+  bgImage: string;
+  profileImg: string;
+  signImg: string;
+  name: string;
+  color: string;
+  text1: string;
+  text2: string;
+  text3: string;
+  startDate: Date;
+  endDate: Date;
+  active: boolean;
+  websiteId: string;
+  createdAt: string;
+  updatedAt: string;
+};
+
 const EventPopup: FC<Props> = (): JSX.Element => {
   let [isOpen, setIsOpen] = useState(false);
+  const [data, setData] = useState<EventObject | null>(null);
 
   function closeModal() {
     setIsOpen(false);
@@ -18,109 +51,146 @@ const EventPopup: FC<Props> = (): JSX.Element => {
     setIsOpen(true);
   }
 
+  useEffect(() => {
+    fetchEvent();
+    async function fetchEvent() {
+      try {
+        const response = await axios.get(
+          `https://cms.ssdapp.net/api/events?websiteId=VEL`,
+          configAxios
+        );
+        if (
+          response.status == 200 &&
+          response.data != "No event found in the database."
+        ) {
+          setData(response.data[0]);
+          setIsOpen(true);
+        }
+      } catch (error) {
+        if (axios.isAxiosError(error)) {
+          console.error("Error message:", error.message);
+        } else {
+          console.error("Unexpected error:", error);
+        }
+      }
+    }
+  }, []);
+
+  if (data == null) return <></>;
+
   return (
     <>
-      <Transition appear show={isOpen} as={Fragment}>
-        <Dialog as="div" className="relative z-50" onClose={openModal}>
-          <Transition.Child
-            as={Fragment}
-            enter="ease-out duration-300"
-            enterFrom="opacity-0"
-            enterTo="opacity-100"
-            leave="ease-in duration-200"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
+      <Dialog
+        open={isOpen}
+        onClose={() => false}
+        transition
+        className="fixed inset-0 flex w-screen items-center justify-center bg-black/30 p-4 transition duration-300 ease-out data-[closed]:opacity-0 z-50"
+      >
+        <DialogPanel
+          as="div"
+          className="h-fit w-fit rounded-md space-y-4 p-6 md:p-8 xl:p-14 relative overflow-hidden "
+          style={{
+            backgroundImage: `url('${data.bgImage}')`,
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+          }}
+        >
+          <button
+            type="button"
+            className="size-7 md:size-10 bg-white text-black rounded-full absolute right-4 top-4 flex justify-center items-center z-20"
+            onClick={closeModal}
           >
-            <div className="fixed inset-0 bg-black bg-opacity-50" />
-          </Transition.Child>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="1.5"
+              stroke="currentColor"
+              className="size-5 md:size-6 shrink-0"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18 18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
 
-          <div className="fixed inset-0 overflow-y-auto">
-            <div className="flex min-h-full items-center justify-center p-10 text-center">
-              <Transition.Child
-                as={Fragment}
-                enter="ease-out duration-300"
-                enterFrom="opacity-0 scale-95"
-                enterTo="opacity-100 scale-100"
-                leave="ease-in duration-200"
-                leaveFrom="opacity-100 scale-100"
-                leaveTo="opacity-0 scale-95"
+          <div className="w-full min-h-[65vh] md:min-h-[50vh] z-10 grid grid-cols-1 grid-rows-3 md:grid-rows-1 md:grid-cols-2  gap-2 xl:gap-4 justify-items-center md:-translate-y-4">
+            <div className="min-h-[300px] w-full h-full flex  relative !row-span-2 md:row-span-1 -mt-4 md:mt-0  ">
+              <Image
+                src={data.profileImg}
+                alt="profile"
+                sizes="100vw"
+                quality={100}
+                width={0}
+                height={0}
+                className="w-full h-full object-contain object-center absolute inset-0 scale-[0.80] md:scale-[0.9] drop-shadow-md "
+              />
+              <div className="size-24 md:size-32 absolute top-0 -left-2  md:hidden     ">
+                <Image
+                  src={data.signImg}
+                  alt="sign"
+                  sizes="100vw"
+                  quality={100}
+                  width={0}
+                  height={0}
+                  className="w-full h-full object-contain object-center  "
+                />
+              </div>
+            </div>
+
+            <div
+              style={{ color: data.color }}
+              className="flex flex-col justify-center items-center gap-2 md:gap-2 max-w-sm -mt-20 md:mt-0 md:-translate-x-5 scale-95 md:scale-100"
+            >
+              <div className="size-32 relative hidden md:block  ">
+                <Image
+                  src={data.signImg}
+                  alt="sign"
+                  sizes="100vw"
+                  quality={100}
+                  width={0}
+                  height={0}
+                  className="w-full h-full object-contain object-center  "
+                />
+              </div>
+              <p
+                className={` text-center !whitespace-pre-line text-sm md:text-base xl:text-lg drop-shadow-sm`}
               >
-                <Dialog.Panel className="transform p-4 text-left align-middle transition-all max-w-4xl  lg:max-w-5xl xl:max-w-5xl w-full bg-[url('/assets/king2565/01_background.webp')] lg:bg-[url('/assets/king2565/01_background.webp')] bg-no-repeat bg-cover bg-top h-fit py-10 sm:h-[70vh] md:h-[80vh] lg:h-[70vh] relative flex justify-center items-center  rounded-lg ">
-                  {/* <div className="absolute bottom-0 h-1/2 bg-gradient-to-t from-white z-0 w-full left-0" /> */}
+                {data.text1.replace(new RegExp("\r?\n", "g"), "<br />")}
+              </p>
 
-                  <div className="absolute -top-7 -right-1 ">
-                    <button
-                      type="button"
-                      onClick={closeModal}
-                      className="z-50 border-none outline-none "
-                    >
-                      <svg
-                        className=" text-[#f6f6f6]"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 18 18"
-                        fill="currentColor"
-                      >
-                        <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
-                      </svg>
-                      <span className="sr-only">close</span>
-                    </button>
-                  </div>
+              <div className="flex flex-col md:gap-2 ">
+                <p
+                  className={` text-center !whitespace-pre-line text-3xl md:text-4xl xl:text-5xl font-semibold drop-shadow-sm`}
+                >
+                  {data.text2.replace(new RegExp("\r?\n", "g"), "<br />")}
+                </p>
 
-                  <div className="w-full h-full relative max-w-xl lg:max-w-7xl  md:mt-0">
-                    {/* <span className="sr-only border-img">class-border</span> */}
-
-                    {/* <div className="w-20 h-20 sm:w-28 sm:h-28 bg-[url('/assets/king2565/03_sign.svg')] bg-contain bg-no-repeat bg-right sm:bg-center absolute -top-4 right-0 md:hidden " /> */}
-
-                    <div className="w-full h-full relative grid grid-cols-1 grid-rows-2 lg:grid-cols-2 lg:grid-rows-1 gap-2 my-2 lg:mt-0">
-                      <div className="bg-[url('/assets/king2565/02_picture.webp')] bg-no-repeat bg-contain bg-center  lg:bg-center flex items-center justify-center h-full relative lg:scale-90  opacity-100   -translate-y-2 " />
-
-                      <div className="h-full w-full relative justify-center items-center justify-items-center  gap-3 lg:-translate-x-10 ">
-                        {/* <div className="w-full max-h-[250px] h-full relative bg-[url('/assets/king2565/03_sign.svg')] bg-no-repeat bg-center bg-contain hidden md:block "></div> */}
-
-                        <div className="w-full h-full relative justify-center items-center  hidden lg:flex row-span-2  ">
-                          <Image
-                            unoptimized
-                            priority={true}
-                            src="/assets/king2565/04_text.webp"
-                            alt="text"
-                            sizes="100vw"
-                            width="0"
-                            height="0"
-                            style={{
-                              objectFit: "contain",
-                              objectPosition: "center",
-                            }}
-                            className="w-full h-full"
-                          />
-                        </div>
-
-                        <div className="w-full h-full  relative -translate-y-4  lg:hidden ">
-                          <Image
-                            unoptimized
-                            priority={true}
-                            src="/assets/king2565/04_text.webp"
-                            alt="text"
-                            sizes="100vw"
-                            width="0"
-                            height="0"
-                            style={{
-                              objectFit: "contain",
-                              objectPosition: "top",
-                            }}
-                            className="w-full h-full scale-90"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </Dialog.Panel>
-              </Transition.Child>
+                <div className="w-full relative">
+                  <Image
+                    src={
+                      "https://res.cloudinary.com/dndcgytjh/image/upload/fl_preserve_transparency/v1721820504/divide_royal_plj7op.jpg?_s=public-apps"
+                    }
+                    alt="divide"
+                    sizes="100vw"
+                    width={0}
+                    height={0}
+                    className="w-full h-full object-contain object-center drop-shadow-sm"
+                  />
+                </div>
+              </div>
+              <p
+                className={` text-center whitespace-pre-line text-sm md:text-base xl:text-lg drop-shadow-sm `}
+              >
+                {data.text3.replace(new RegExp("\r?\n", "g"), "<br />")}
+              </p>
             </div>
           </div>
-        </Dialog>
-      </Transition>
+        </DialogPanel>
+      </Dialog>
     </>
   );
 };

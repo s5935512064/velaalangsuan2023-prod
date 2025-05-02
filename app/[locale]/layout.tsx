@@ -95,6 +95,10 @@ export default function RootLayout({ children, params }: Props) {
     <html lang={params.locale} className={`${prompt.variable} `}>
       <GoogleAnalytics gaId={String(ga_id)} />
       <GoogleTagManager gtmId={String(ga_id)} />
+      <meta
+        name="google-site-verification"
+        content="b1zAjvM-0x_4O7r9_SNvwAG3Eav1PwC9V9nj9V1Qynk"
+      />
 
       <CookieConsent />
       <AOSInit />

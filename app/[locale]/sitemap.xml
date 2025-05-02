@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-    <loc>https://velaalangsuan.com/en</loc>
-    <lastmod>2024-05-31T09:03:08.341Z</lastmod>
+    <loc>https://cms.ssdapp.net/api/en</loc>
+    <lastmod>2024-12-02T09:22:18.545Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://velaalangsuan.com/en/event</loc>
-    <lastmod>2024-05-31T09:03:08.343Z</lastmod>
+    <loc>https://cms.ssdapp.net/api/en/event</loc>
+    <lastmod>2024-12-02T09:22:18.545Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://velaalangsuan.com/en/welcome</loc>
-    <lastmod>2024-05-31T09:03:08.343Z</lastmod>
+    <loc>https://cms.ssdapp.net/api/en/welcome</loc>
+    <lastmod>2024-12-02T09:22:18.545Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>

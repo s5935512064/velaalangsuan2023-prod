@@ -32,16 +32,6 @@ export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
   const csrfToken = headers().get("X-CSRF-Token") || "missing";
   const { isRateLimited, currentUsage, limit } = limiter.check(csrfToken);
-  const { cookies } = request;
-  const firstVisitCookie = cookies.get("firstVisit_velaa");
-
-  if (!firstVisitCookie) {
-    const response = NextResponse.redirect(new URL("/welcome", request.url));
-    response.cookies.set("firstVisit_velaa", "true", { maxAge: 60 * 60 * 12 }); // Expires in 7 days
-    return response;
-    // return NextResponse.redirect(new URL(`/en/welcome`, request.url));
-  }
-  // console.log(`Rate limit: ${currentUsage}/${limit}`);
 
   if (isRateLimited) {
     return new Response("Rate limit reached", {
@@ -74,7 +64,7 @@ export function middleware(request: NextRequest) {
 export const config = {
   // Skip all paths that should not be internationalized
   matcher: [
-    "/((?!api|_next/static|_next/image|assets|fonts|favicon.webp|favicon.svg|robots.txt).*)",
+    "/((?!api|_next/static|_next/image|assets|fonts|favicon.webp|favicon.svg|robots.txt|en/sitemap.xml).*)",
   ],
 };
 

@@ -9,6 +9,10 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
  **/
 
 const nextConfig = {
+    env: {
+        NEXT_PUBLIC_GOOGLE_ANALYTICS: String(process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS),
+        NEXT_BEARER_TOKEN: process.env.NEXT_BEARER_TOKEN
+    },
 
     images: {
         domains: ['scontent-kut2-2.xx.fbcdn.net', 'scontent.fbkk10-1.fna.fbcdn.net', "scontent-kut2-1.xx.fbcdn.net", "scontent.fbkk14-1.fna.fbcdn.net", "https://velaalangsuan.com/", "scontent-kul2-1.xx.fbcdn.net"],
