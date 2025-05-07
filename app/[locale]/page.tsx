@@ -84,7 +84,7 @@ export default function Home() {
         id="navbar"
         className={classNames(
           navbarOffset ? "shadow" : "shadow-none",
-          "fixed top-0 w-full px-4 md:px-10 xxl:px-0 py-7 flex flex-col justify-center items-center bg-white z-30 transition-all"
+          "fixed top-0 w-full px-4 md:px-10 xxl:px-0 py-7 flex flex-col justify-center items-center bg-white !z-[60] transition-all"
         )}
       >
         <div className="max-w-7xl  flex justify-center items-center relative w-full h-20">
