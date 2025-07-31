@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {
   title:
@@ -11,6 +12,10 @@ export const metadata: Metadata = {
 };
 
 export default function Welcome() {
+  var expired = true;
+
+  if (expired) return redirect("/");
+
   return (
     <>
       <div className="min-h-screen w-full relative bg-[url('/assets/king2565/01_background.webp')] bg-center bg-cover bg-no-repeat flex justify-center items-center px-4 md:px-6 lg:px-8 xl:px-10">
