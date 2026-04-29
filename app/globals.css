@@ -19,6 +19,12 @@
   border: 3px solid var(--primary);
 }
 
+html {
+  @apply grayscale;
+  filter: grayscale(25%) !important;
+  -webkit-filter: grayscale(25%) !important;
+}
+
 @tailwind components;
 @tailwind utilities;
 

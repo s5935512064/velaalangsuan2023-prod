@@ -105,6 +105,20 @@ export default function RootLayout({ children, params }: Props) {
 
       <body className="w-full h-full overflow-x-hidden flex justify-center items-center ">
         <Transition>{children}</Transition>
+
+        <img
+          src="https://raw.githubusercontent.com/appzstory/appzstory-ribbon/main/black_ribbon_top_right.png"
+          alt="Black Ribbon Top Right"
+          style={{
+            position: "fixed",
+            top: 0,
+            right: 0,
+            width: "80px",
+            opacity: 0.9,
+            zIndex: 9999,
+            pointerEvents: "none",
+          }}
+        />
       </body>
     </html>
   );

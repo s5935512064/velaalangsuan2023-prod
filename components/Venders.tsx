@@ -30,7 +30,7 @@ const venders_list = [
       { src: "/assets/shop-gallery/Wash Me/washme_5.webp" },
       { src: "/assets/shop-gallery/Wash Me/washme_6.webp" },
     ],
-    new: true,
+    new: false,
   },
   {
     id: 60,
@@ -61,7 +61,7 @@ const venders_list = [
       { src: "/assets/shop-gallery/Chicha San Chen/chicha_7.webp" },
       { src: "/assets/shop-gallery/Chicha San Chen/chicha_8.webp" },
     ],
-    new: true,
+    new: false,
   },
   {
     id: 59,
@@ -90,7 +90,7 @@ const venders_list = [
       { src: "/assets/shop-gallery/Kad Kreamery/kadkreamery_5.webp" },
       { src: "/assets/shop-gallery/Kad Kreamery/kadkreamery_6.webp" },
     ],
-    new: true,
+    new: false,
   },
   {
     id: 58,
@@ -121,7 +121,7 @@ const venders_list = [
       { src: "/assets/shop-gallery/Get Some Coffee/getsomecoffee_7.webp" },
       { src: "/assets/shop-gallery/Get Some Coffee/getsomecoffee_8.webp" },
     ],
-    new: true,
+    new: false,
   },
   {
     id: 57,
@@ -132,18 +132,18 @@ const venders_list = [
       "A luxury barbershop offering precision grooming, classic cuts, and premium care in a refined, gentleman’s club-inspired setting.",
     aboutTH:
       "ร้านบาร์เบอร์ลักซ์ชูรีสำหรับสุภาพบุรุษที่ชอบความหรูหราและมีสไตล์ ให้บริการโดยช่างมืออาชีพ ไม่ว่าจะเป็นการตัดผม โกนหนวด ฯลฯ ในบรรยากาศแบบ Gentleman’s Club",
-    datetime: "",
+    datetime: "10:00 AM - 09:00 PM",
     datetime2: "",
-    tel: "",
+    tel: "0944665699",
     facebook: "#",
-    ig: "#",
-    line: "#",
+    ig: "https://www.instagram.com/kingsmanthailand",
+    line: "https://lin.ee/iNqvLn8 ",
     deliver: "#",
     grabfood: "#",
     lineman: "#",
     robinhood: "#",
     gallery: [],
-    new: true,
+    new: false,
   },
   {
     id: 56,
@@ -174,7 +174,7 @@ const venders_list = [
       { src: "/assets/shop-gallery/Tonkatsu Aoki/tonkatsu_7.webp" },
       { src: "/assets/shop-gallery/Tonkatsu Aoki/tonkatsu_8.webp" },
     ],
-    new: true,
+    new: false,
   },
   {
     id: 55,
@@ -202,7 +202,7 @@ const venders_list = [
       { src: "/assets/shop-gallery/LAWOI/LAWOI (4).webp" },
       { src: "/assets/shop-gallery/LAWOI/LAWOI (5).webp" },
     ],
-    new: true,
+    new: false,
   },
   {
     id: 54,
@@ -230,7 +230,7 @@ const venders_list = [
       { src: "/assets/shop-gallery/JTAP/JTAP (4).webp" },
       { src: "/assets/shop-gallery/JTAP/JTAP (5).webp" },
     ],
-    new: true,
+    new: false,
   },
   {
     id: 53,
@@ -262,7 +262,7 @@ const venders_list = [
       { src: "/assets/shop-gallery/Maison Roru/maison_7.webp" },
       { src: "/assets/shop-gallery/Maison Roru/maison_8.webp" },
     ],
-    new: true,
+    new: false,
   },
   {
     id: 52,
@@ -284,7 +284,7 @@ const venders_list = [
     lineman: "#",
     robinhood: "#",
     gallery: [],
-    new: true,
+    new: false,
   },
   {
     id: 51,
@@ -314,7 +314,7 @@ const venders_list = [
       { src: "/assets/shop-gallery/vilas/vilas-6.jpg" },
       { src: "/assets/shop-gallery/vilas/vilas-7.jpg" },
     ],
-    new: true,
+    new: false,
   },
   {
     id: 50,
@@ -346,7 +346,7 @@ const venders_list = [
       { src: "/assets/shop-gallery/LILJ/183.webp" },
       { src: "/assets/shop-gallery/LILJ/189.webp" },
     ],
-    new: true,
+    new: false,
   },
   {
     id: 49,
@@ -374,57 +374,57 @@ const venders_list = [
       { src: "/assets/shop-gallery/PP/pp-gallery-4.jpg" },
       { src: "/assets/shop-gallery/PP/pp-gallery-5.jpg" },
     ],
-    new: true,
-  },
-  {
-    id: 16,
-    name: "Pizza Bar by Café Eiffel",
-    shopImg: "/assets/shop-gallery/Pizza Bar by Cafe Eiffel/logo_pizza.webp",
-    keyword:
-      "CaféEiffelPizzabarParmahamSeafoodPepperoniMargheritaSmokedSalmonTruffleFriedchickenbeerlagerพิซซ่าเบียร์พามาแฮมไก่ทอดเฟรนส์ฟรายซีฟู้ดแซลมอน",
-    about:
-      "Pizza and pasta, beloved foods that have captured hearts worldwide, are familiar to many. We know the thin, crispy pizza crust topped with tomato sauce, cheese, and various toppings, as well as the delectable pasta dishes. But have you ever wondered about the origins of these cherished meals? 'Sugo' the thick red sauce essential to both pizza and pasta, has a fascinating history. In Italian, 'sugo' simply means 'sauce', Its concept can be traced back to the tomato sauce invented by the Aztecs. When the Spanish occupied Mexico, they introduced this tomato sauce to Europe, where it evolved into the sugo we know today.",
-    aboutTH:
-      "พิซซ่าและพาสต้า อาหารยอดนิยมที่ครองใจผู้คนทั่วโลก ใครๆ ก็รู้จักแป้งพิซซ่าบางกรอบ ราดด้วยซอสมะเขือเทศ ชีส และท็อปปิ้งหลากหลาย รวมถึงเมนูพาสต้าแสนอร่อย แต่คุณเคยสงสัยไหมว่าอาหารเลิศรสเหล่านี้มีที่มาอย่างไร? ซอสแดงเข้มข้นที่เป็นหัวใจสำคัญของทั้งพิซซ่าและพาสต้า มีประวัติความเป็นมาที่น่าทึ่ง คำว่า 'ซูโก้' ในภาษาอิตาลีแปลว่า 'ซอส' โดยมีรากเหง้ามาจากซอสมะเขือเทศที่ชาวแอซเท็กคิดค้น เมื่อสเปนเข้ายึดครองเม็กซิโก พวกเขาได้นำซอสนี้เข้าสู่ยุโรป ซึ่งต่อมาได้วิวัฒนาการกลายเป็นซูโก้อย่างที่เรารู้จักในปัจจุบัน",
-    datetime: "11:00 AM - 21:00 PM",
-    datetime2: "",
-    tel: "0610185385",
-    facebook: "https://www.facebook.com/EiffelBakery",
-    ig: "https://www.instagram.com/cafeeiffel_bakery/",
-    line: "https://lin.ee/nNP7vuS",
-    deliver: "#",
-    grabfood: "#",
-    lineman: "#",
-    robinhood: "#",
-    gallery: [
-      { src: "/assets/shop-gallery/Pizza Bar by Cafe Eiffel/456_0.webp" },
-      {
-        src: "/assets/shop-gallery/Pizza Bar by Cafe Eiffel/458_0.webp",
-      },
-      {
-        src: "/assets/shop-gallery/Pizza Bar by Cafe Eiffel/460_0.webp",
-      },
-      {
-        src: "/assets/shop-gallery/Pizza Bar by Cafe Eiffel/462_0.webp",
-      },
-      {
-        src: "/assets/shop-gallery/Pizza Bar by Cafe Eiffel/465.webp",
-      },
-      {
-        src: "/assets/shop-gallery/Pizza Bar by Cafe Eiffel/467_0.webp",
-      },
-      {
-        src: "/assets/shop-gallery/Pizza Bar by Cafe Eiffel/468_0.webp",
-      },
-      {
-        src: "/assets/shop-gallery/Pizza Bar by Cafe Eiffel/470_0.webp",
-      },
-      {
-        src: "/assets/shop-gallery/Pizza Bar by Cafe Eiffel/471_0.webp",
-      },
-    ],
     new: false,
   },
+  // {
+  //   id: 16,
+  //   name: "Pizza Bar by Café Eiffel",
+  //   shopImg: "/assets/shop-gallery/Pizza Bar by Cafe Eiffel/logo_pizza.webp",
+  //   keyword:
+  //     "CaféEiffelPizzabarParmahamSeafoodPepperoniMargheritaSmokedSalmonTruffleFriedchickenbeerlagerพิซซ่าเบียร์พามาแฮมไก่ทอดเฟรนส์ฟรายซีฟู้ดแซลมอน",
+  //   about:
+  //     "Pizza and pasta, beloved foods that have captured hearts worldwide, are familiar to many. We know the thin, crispy pizza crust topped with tomato sauce, cheese, and various toppings, as well as the delectable pasta dishes. But have you ever wondered about the origins of these cherished meals? 'Sugo' the thick red sauce essential to both pizza and pasta, has a fascinating history. In Italian, 'sugo' simply means 'sauce', Its concept can be traced back to the tomato sauce invented by the Aztecs. When the Spanish occupied Mexico, they introduced this tomato sauce to Europe, where it evolved into the sugo we know today.",
+  //   aboutTH:
+  //     "พิซซ่าและพาสต้า อาหารยอดนิยมที่ครองใจผู้คนทั่วโลก ใครๆ ก็รู้จักแป้งพิซซ่าบางกรอบ ราดด้วยซอสมะเขือเทศ ชีส และท็อปปิ้งหลากหลาย รวมถึงเมนูพาสต้าแสนอร่อย แต่คุณเคยสงสัยไหมว่าอาหารเลิศรสเหล่านี้มีที่มาอย่างไร? ซอสแดงเข้มข้นที่เป็นหัวใจสำคัญของทั้งพิซซ่าและพาสต้า มีประวัติความเป็นมาที่น่าทึ่ง คำว่า 'ซูโก้' ในภาษาอิตาลีแปลว่า 'ซอส' โดยมีรากเหง้ามาจากซอสมะเขือเทศที่ชาวแอซเท็กคิดค้น เมื่อสเปนเข้ายึดครองเม็กซิโก พวกเขาได้นำซอสนี้เข้าสู่ยุโรป ซึ่งต่อมาได้วิวัฒนาการกลายเป็นซูโก้อย่างที่เรารู้จักในปัจจุบัน",
+  //   datetime: "11:00 AM - 21:00 PM",
+  //   datetime2: "",
+  //   tel: "0610185385",
+  //   facebook: "https://www.facebook.com/EiffelBakery",
+  //   ig: "https://www.instagram.com/cafeeiffel_bakery/",
+  //   line: "https://lin.ee/nNP7vuS",
+  //   deliver: "#",
+  //   grabfood: "#",
+  //   lineman: "#",
+  //   robinhood: "#",
+  //   gallery: [
+  //     { src: "/assets/shop-gallery/Pizza Bar by Cafe Eiffel/456_0.webp" },
+  //     {
+  //       src: "/assets/shop-gallery/Pizza Bar by Cafe Eiffel/458_0.webp",
+  //     },
+  //     {
+  //       src: "/assets/shop-gallery/Pizza Bar by Cafe Eiffel/460_0.webp",
+  //     },
+  //     {
+  //       src: "/assets/shop-gallery/Pizza Bar by Cafe Eiffel/462_0.webp",
+  //     },
+  //     {
+  //       src: "/assets/shop-gallery/Pizza Bar by Cafe Eiffel/465.webp",
+  //     },
+  //     {
+  //       src: "/assets/shop-gallery/Pizza Bar by Cafe Eiffel/467_0.webp",
+  //     },
+  //     {
+  //       src: "/assets/shop-gallery/Pizza Bar by Cafe Eiffel/468_0.webp",
+  //     },
+  //     {
+  //       src: "/assets/shop-gallery/Pizza Bar by Cafe Eiffel/470_0.webp",
+  //     },
+  //     {
+  //       src: "/assets/shop-gallery/Pizza Bar by Cafe Eiffel/471_0.webp",
+  //     },
+  //   ],
+  //   new: false,
+  // },
   {
     id: 47,
     name: "Oyatsu no Jikan",

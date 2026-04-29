@@ -78,7 +78,7 @@ const EventPopup: FC<Props> = (): JSX.Element => {
       <Dialog
         open={isOpen}
         onClose={() => false}
-        className="fixed inset-0 flex w-screen items-center justify-center bg-black/30 p-4 transition duration-300 ease-out data-[closed]:opacity-0 z-50"
+        className="fixed inset-0 flex w-screen items-center justify-center bg-black/30 p-4 transition duration-300 ease-out data-[closed]:opacity-0 !z-[999]"
       >
         <Dialog.Panel
           as="div"
@@ -151,17 +151,19 @@ const EventPopup: FC<Props> = (): JSX.Element => {
                 />
               </div>
               <p
-                className={` text-center !whitespace-pre-line text-sm md:text-base xl:text-lg drop-shadow-sm`}
-              >
-                {data.text1.replace(new RegExp("\r?\n", "g"), "<br />")}
-              </p>
+                className={` text-center  text-sm md:text-base xl:text-lg drop-shadow-sm`}
+                dangerouslySetInnerHTML={{
+                  __html: data.text1.replace(/\\n/g, "<br />"),
+                }}
+              />
 
               <div className="flex flex-col md:gap-2 ">
                 <p
-                  className={` text-center !whitespace-pre-line text-3xl md:text-4xl xl:text-5xl font-semibold drop-shadow-sm`}
-                >
-                  {data.text2.replace(new RegExp("\r?\n", "g"), "<br />")}
-                </p>
+                  className={` text-center  text-3xl md:text-4xl xl:text-5xl font-semibold drop-shadow-sm`}
+                  dangerouslySetInnerHTML={{
+                    __html: data.text2.replace(/\\n/g, "<br />"),
+                  }}
+                />
 
                 <div className="w-full relative">
                   <Image
@@ -177,10 +179,11 @@ const EventPopup: FC<Props> = (): JSX.Element => {
                 </div>
               </div>
               <p
-                className={` text-center whitespace-pre-line text-sm md:text-base xl:text-lg drop-shadow-sm `}
-              >
-                {data.text3.replace(new RegExp("\r?\n", "g"), "<br />")}
-              </p>
+                className={` text-center text-sm md:text-base xl:text-lg drop-shadow-sm `}
+                dangerouslySetInnerHTML={{
+                  __html: data.text3.replace(/\\n/g, "<br />"),
+                }}
+              />
             </div>
           </div>
         </Dialog.Panel>

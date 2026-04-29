@@ -7,14 +7,12 @@ import Link from "next/link";
 import axios from "axios";
 import useSWR, { mutate } from "swr";
 import dynamic from "next/dynamic";
+import { redirect } from "next/navigation";
 
 const Fancybox = dynamic(() => import("@/components/FancyboxWrap"), {
   ssr: false,
 });
 
-function SearchBarFallback() {
-  return <>placeholder</>;
-}
 function classNames(...classes: any[]) {
   return classes.filter(Boolean).join(" ");
 }
@@ -43,7 +41,7 @@ export default function Event() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const audioButton = useRef<HTMLButtonElement>(null);
   const [images, setImages] = useState([]);
-
+  const [expired, setExpired] = useState(true);
   function groupBy(objectArray: any, property: string) {
     return objectArray.reduce(function (acc: any, obj: any) {
       var key = obj[property];
@@ -117,6 +115,8 @@ export default function Event() {
       setImages(image);
     }
   }, []);
+
+  if (expired) return redirect("/");
 
   return (
     <>
