@@ -6,7 +6,7 @@ function addPage(page) {
   const route = path === '/page' ? '' : path
 
   return `  <url>
-    <loc>${`${process.env.NEXT_PUBLIC_API_URL}/en${route}`}</loc>
+    <loc>${`${process.env.WEBSITE_URL}/en${route}`}</loc>
     <lastmod>${new Date().toISOString()}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -19,7 +19,7 @@ function addPageTH(page) {
   const route = path === '/page' ? '' : path
 
   return `  <url>
-    <loc>${`${process.env.NEXT_PUBLIC_API_URL}/th${route}`}</loc>
+    <loc>${`${process.env.WEBSITE_URL}/th${route}`}</loc>
     <lastmod>${new Date().toISOString()}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -59,3 +59,4 @@ async function generateSitemap() {
 }
 
 generateSitemap()
+
