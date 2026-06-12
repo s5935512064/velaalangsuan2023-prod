@@ -1,194 +1,279 @@
 "use client";
 
 import React, { FC, useEffect, useState } from "react";
-import { Dialog } from "@headlessui/react";
-import Image from "next/image";
-import axios, { AxiosRequestConfig } from "axios";
+import { Dialog, DialogPanel } from "@headlessui/react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import {
+  EffectFade,
+  Autoplay,
+  Pagination,
+  Navigation,
+} from "swiper/modules";
 
-const configAxios: AxiosRequestConfig = {
-  headers: {
-    "Content-Type": "application/json",
-    Authorization: `Bearer ${process.env.NEXT_BEARER_TOKEN}`,
-  },
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import "swiper/css/effect-fade";
+
+interface Props { }
+
+type BannerObject = {
+  id: string;
+  title: string;
+  desktopImage: string;
+  tabletImage: string;
+  mobileImage: string;
+  seq: number;
+  linkUrl: string;
+  altText: string;
+  target: string;
+  ctaLabel: string;
+  ctaLink: string | null;
+  ctaTarget: string;
 };
 
-interface Props {}
+const EventPopup: FC<Props> = (): JSX.Element | null => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [data, setData] = useState<BannerObject[]>([]);
+  const [loading, setLoading] = useState(true);
 
-type EventObject = {
-  id: number;
-  eventId: string;
-  bgImage: string;
-  profileImg: string;
-  signImg: string;
-  name: string;
-  color: string;
-  text1: string;
-  text2: string;
-  text3: string;
-  startDate: Date;
-  endDate: Date;
-  active: boolean;
-  websiteId: string;
-  createdAt: string;
-  updatedAt: string;
-};
-
-const EventPopup: FC<Props> = (): JSX.Element => {
-  let [isOpen, setIsOpen] = useState(false);
-  const [data, setData] = useState<EventObject | null>(null);
-
-  function closeModal() {
+  const closeModal = () => {
     setIsOpen(false);
-  }
-
-  function openModal() {
-    setIsOpen(true);
-  }
+  };
 
   useEffect(() => {
-    fetchEvent();
-    async function fetchEvent() {
+    const fetchEvent = async () => {
       try {
-        const response = await axios.get(
-          `https://cms.ssdapp.net/api/events?websiteId=VEL`,
-          configAxios
-        );
+        const response = await fetch("/api/get-banners");
 
+        if (!response.ok) {
+          throw new Error("Failed to fetch banners");
+        }
+
+        const res = await response.json();
         if (
-          response.status == 200 &&
-          response.data != "No event found in the database."
+          res.success &&
+          Array.isArray(res.data) &&
+          res.data.length > 0
         ) {
-          setData(response.data[0]);
+          const sortedBanners = [...res.data].sort(
+            (a: BannerObject, b: BannerObject) => a.seq - b.seq
+          );
+
+          setData(sortedBanners);
           setIsOpen(true);
         }
       } catch (error) {
-        if (axios.isAxiosError(error)) {
-          console.error("Error message:", error.message);
-        } else {
-          console.error("Unexpected error:", error);
-        }
+        console.error("Error fetching banners:", error);
+      } finally {
+        setLoading(false);
       }
-    }
+    };
+
+    fetchEvent();
   }, []);
 
-  if (data == null) return <></>;
+
+  if (loading || data.length === 0) {
+    return null;
+  }
 
   return (
-    <>
-      <Dialog
-        open={isOpen}
-        onClose={() => false}
-        className="fixed inset-0 flex w-screen items-center justify-center bg-black/30 p-4 transition duration-300 ease-out data-[closed]:opacity-0 !z-[999]"
+    <Dialog
+      open={isOpen}
+      onClose={() => false}
+      className="
+        fixed inset-0 z-[9999]
+        flex items-center justify-center
+        p-3 md:p-6
+
+        bg-black/25
+       
+      "
+    >
+      <DialogPanel
+        as="div"
+        className="
+          relative
+          min-w-0
+          w-[85vw] md:w-full!
+          max-w-[360px] md:max-w-2xl
+          max-h-[80vh] md:max-h-[90vh]
+        "
       >
-        <Dialog.Panel
-          as="div"
-          className="h-fit w-fit rounded-md space-y-4 p-6 md:p-8 xl:p-14 relative overflow-hidden "
-          style={{
-            backgroundImage: `url('${data.bgImage}')`,
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-          }}
+        {/* Close Button */}
+        <button
+          type="button"
+          onClick={closeModal}
+          aria-label="Close modal"
+          className="
+            absolute right-2 top-2 z-30
+
+            flex items-center justify-center
+
+            size-9 md:size-11
+
+            rounded-full
+            bg-white/85
+            text-black
+
+            shadow-xl
+            backdrop-blur-md
+
+            transition-all duration-200
+            hover:scale-105
+            hover:bg-white
+          "
         >
-          <button
-            type="button"
-            className="w-7 h-7 md:w-10 md:h-10 bg-white text-black rounded-full absolute right-4 top-4 flex justify-center items-center z-20"
-            onClick={closeModal}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="currentColor"
+            className="size-5 md:size-6"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="currentColor"
-              className="w-5 h-5 md:w-6 md:h-6 shrink-0"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M6 18 18 6M6 6l12 12"
-              />
-            </svg>
-          </button>
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M6 18 18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
 
-          <div className="w-full min-h-[65vh] md:min-h-[50vh] z-10 grid grid-cols-1 grid-rows-3 md:grid-rows-1 md:grid-cols-2  gap-2 xl:gap-4 justify-items-center md:-translate-y-4">
-            <div className="min-h-[300px] w-full h-full flex  relative !row-span-2 md:row-span-1 -mt-4 md:mt-0  ">
-              <Image
-                src={data.profileImg}
-                alt="profile"
-                sizes="100vw"
-                quality={100}
-                width={0}
-                height={0}
-                className="w-full h-full object-contain object-center absolute inset-0 scale-[0.80] md:scale-[0.9] drop-shadow-md "
-              />
-              <div className="w-20 h-20 md:w-32 md:h-32 absolute top-4 left-0  md:hidden     ">
-                <Image
-                  src={data.signImg}
-                  alt="sign"
-                  sizes="100vw"
-                  quality={100}
-                  width={0}
-                  height={0}
-                  className="w-full h-full object-contain object-center   "
-                />
-              </div>
-            </div>
-
-            <div
-              style={{ color: data.color }}
-              className="flex flex-col justify-center items-center gap-2 md:gap-2 max-w-sm -mt-2 md:mt-0 md:-translate-x-5 scale-95 md:scale-100"
-            >
-              <div className="w-32 h-32 relative hidden md:block">
-                <Image
-                  src={data.signImg}
-                  alt="sign"
-                  sizes="100vw"
-                  quality={100}
-                  width={0}
-                  height={0}
-                  className="w-full h-full object-contain object-center  "
-                />
-              </div>
-              <p
-                className={` text-center  text-sm md:text-base xl:text-lg drop-shadow-sm`}
-                dangerouslySetInnerHTML={{
-                  __html: data.text1.replace(/\\n/g, "<br />"),
-                }}
-              />
-
-              <div className="flex flex-col md:gap-2 ">
-                <p
-                  className={` text-center  text-3xl md:text-4xl xl:text-5xl font-semibold drop-shadow-sm`}
-                  dangerouslySetInnerHTML={{
-                    __html: data.text2.replace(/\\n/g, "<br />"),
-                  }}
-                />
-
-                <div className="w-full relative">
-                  <Image
-                    src={
-                      "https://res.cloudinary.com/dndcgytjh/image/upload/fl_preserve_transparency/v1721820504/divide_royal_plj7op.jpg?_s=public-apps"
+        {/* Slider */}
+        <div className="overflow-hidden rounded-xl">
+          <Swiper
+            slidesPerView={1}
+            centeredSlides
+            loop={data.length > 1}
+            autoHeight
+            speed={800}
+            effect="fade"
+            fadeEffect={{
+              crossFade: true,
+            }}
+            autoplay={{
+              delay: 5000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }}
+            pagination={{
+              clickable: true,
+              dynamicBullets: true,
+            }}
+            navigation={false}
+            modules={[
+              Autoplay,
+              Pagination,
+              Navigation,
+              EffectFade,
+            ]}
+            className="w-full"
+          >
+            {data.map((banner) => (
+              <SwiperSlide key={banner.id}>
+                {banner.linkUrl ? (
+                  <a
+                    href={banner.linkUrl}
+                    target={banner.target || "_self"}
+                    rel={
+                      banner.target === "_blank"
+                        ? "noopener noreferrer"
+                        : undefined
                     }
-                    alt="divide"
-                    sizes="100vw"
-                    width={0}
-                    height={0}
-                    className="w-full h-full object-contain object-center drop-shadow-sm"
-                  />
-                </div>
-              </div>
-              <p
-                className={` text-center text-sm md:text-base xl:text-lg drop-shadow-sm `}
-                dangerouslySetInnerHTML={{
-                  __html: data.text3.replace(/\\n/g, "<br />"),
-                }}
-              />
-            </div>
-          </div>
-        </Dialog.Panel>
-      </Dialog>
-    </>
+                    className="block w-full"
+                  >
+                    <BannerImages banner={banner} />
+                  </a>
+                ) : (
+                  <BannerImages banner={banner} />
+                )}
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </DialogPanel>
+    </Dialog>
+  );
+};
+
+const BannerImages = ({
+  banner,
+}: {
+  banner: BannerObject;
+}) => {
+  const fallbackImage =
+    banner.mobileImage || banner.tabletImage || banner.desktopImage;
+
+  return (
+    <div
+      className="
+        relative
+        flex items-center justify-center
+
+        w-full!
+        min-h-[240px]
+        md:min-h-[320px]
+        lg:min-h-[420px]
+
+        overflow-hidden
+        rounded-xl
+        bg-black/50
+      "
+    >
+      {/* Blurred Background */}
+      <img
+        src={fallbackImage}
+        alt=""
+        aria-hidden="true"
+        draggable={false}
+        className="
+          absolute inset-0
+
+          h-full w-full
+
+          object-cover
+          blur-3xl
+          scale-110
+          opacity-100
+        "
+      />
+
+      {/* Main Image */}
+      <picture className="relative z-10 flex items-center justify-center w-full">
+        <source
+          media="(min-width: 1024px)"
+          srcSet={banner.desktopImage}
+        />
+
+        <source
+          media="(min-width: 768px)"
+          srcSet={banner.tabletImage || banner.desktopImage}
+        />
+
+        <img
+          src={fallbackImage}
+          alt={banner.altText || banner.title}
+          loading="lazy"
+          draggable={false}
+          className="
+            block
+
+            w-auto
+            h-auto
+
+            max-w-full
+            max-h-[85vh]
+
+            object-contain
+            object-center
+
+            select-none
+          "
+        />
+      </picture>
+    </div>
   );
 };
 
